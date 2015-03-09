@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/simple.css">
+    <link rel="stylesheet" type="text/css" href="lib/revealjs/css/reveal.css">
+    <link rel="stylesheet" type="text/css" href="lib/revealjs/css/theme/white.css">
+    <link rel="stylesheet" href="lib/revealjs/lib/css/monokai-sublime.css">
+    <link href='http://fonts.googleapis.com/css?family=Muli:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="assets/styles/custom.css">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+            <section data-background="#000">
+                <h1>Welcome!</h1>
+                <img src="assets/images/code-park-tree.png">
+                <aside class="notes">
+                    Students will be filling out warm-ups on what they want to learn and what they are already good at.
+                    <ul>
+                        <li>Welcome (someone else collects and skims through the the slips), into
+                            <ul>
+                                <li>what each of us do</li>
+                                <li>class overview</li>
+                                <li>expectations -- how far we can get will be a direct result of the amount of effort you are willing to put in</li>
+                                <li>syllabus stuff</li>
+                            </ul>
+                        </li>
+                        <li>Discuss "do-now" slips.</li>
+                        <li>Transition into "web development is a specific way of talking to computers to get them to do what we want (personally, what I think is the coolest way)"</li>
+                    </ul>
+                </aside>
+            </section>
+            <section>
+                <h2>Who is smarter, a human or a computer?</h2>
+                <aside class="notes">
+                    <ol>
+                        <li>Guide discussion</li>
+                        <li>Transition into robot game -- let's put ourselves in their shoes!</li>
+                        <li>Demostrate robot game.</li>
+                        <li>Next slide</li>
+                    </ol>
+                </aside>
+            </section>
+            <section class="container">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h2>Human</h2>
+                        <ul>
+                            <li>Instruct the robot to draw the picture</li>
+                            <li>You cannot look at what the robot is drawing</li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6">
+                        <h2>Robot</h2>
+                        <ul>
+                            <li>Listen and draw exactly as the human asks</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row fragment fade-in">
+                    <div class="col-xs-12 reveal-time text-center" data-countdown="300000">
+                        <span class="reset-button">
+                            <span class="action"><i></i><span class="action-label"></span></span>
+                            <div class="clear"></div>
+                            <span class="reset"><i class="fa fa-refresh"></i>Reset</span>
+                        </span>
+                        <div class="timer">
+                            <i class="fa fa-clock-o"></i>
+                            <span class="hours-value">00</span><span class="minutes-value">:00</span><span class="seconds-value">:00</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    <p>Ask students to share.</p>
+                </aside>
+            </section>
+            <section>
+                <p>Robots are better at some things,</p>
+                <p>but cannot think on their own.</p>
+                <aside class="notes">
+                    <p>Give example of -- computers would be better at drawing lots of pictures.</p>
+                    <p>Computers don't get impatient or bored or annoyed</p>
+                    <p>We get to do the fun part of telling computers what to do and computers can do the more repetitive stuff.</p>
+                    <p>We will need to keep in mind that computers/robots get confused very easily.</p>
+                    <p>We just need to be explicit and specific with them.</p>
+                </aside>
+            </section>
+            <section>
+                <h2>How do we tell a browser what to display on a webpage?</h2>
+                <aside class="notes">
+                    <p>Summarize answers, and transition</p>
+                </aside>
+            </section>
+
+            <section>
+                <h2>Let's make our own!</h2>
+                <ul class="fragment fade-in">
+                    <li>Open Notepad</li>
+                    <li>Type something like this:
+                        <pre class="emphasize"><code data-trim contenteditable class="html">
+<h1>Hello world!</h1>
+                        </code></pre>
+                    </li>
+                    <li>Save as <span class="text-primary">first-page.html</span></li>
+                    <li>Open <span class="text-primary">first-page.html</span></li>
+                </ul>
+                <aside class="notes">
+                    <p>Demo first on the projector with everyone watching.  Narrate.  Show split screen.  Demo again, can stop and ask people to prompt me for the next steps.</p>
+                    <p>Tell story about Hello World.</p>
+                    <p>Highlight: isn't this cool? We can do this on almost any computer.</p>
+                    <p>In fact, let's all do this on our own computers!</p>
+                </aside>
+            </section>
+            <section>
+                <h2>Let's update our code to say:</h2>
+                <pre class="emphasize"><code data-trim contenteditable class="html">
+<h1>Hello world!</h1>
+<p>I am pretty awesome.</p>
+                </code></pre>
+                <aside class="notes">
+                    <p>Discuss: What are some patterns we see?</p>
+                </aside>
+            </section>
+            <section>
+                <h2>What did we do?</h2>
+                <p>We added:</p>
+                <ol>
+                    <li class="fragment fade-in" data-fragment-index="1">&nbsp;
+                        <pre><code data-trim class="html">
+<h1>Hello world!</h1>
+                        </code></pre>
+                        <p>a <strong class="fragment highlight" data-fragment-index="2">h</strong>eading<strong class="fragment highlight" data-fragment-index="2">1</strong> element.</p>
+                    </li>
+                    <li class="fragment fade-in" data-fragment-index="3">&nbsp;
+                        <pre><code data-trim class="html">
+<p>I am pretty awesome.</p>
+                        </code></pre>
+                        <p>and a <strong class="fragment highlight" data-fragment-index="4">p</strong>aragraph element</p>
+                    </li>
+                </ol>
+                <p class="fragment fade-in" data-fragment-index="5">Using <strong class="fragment highlight-red" data-fragment-index="6" data-highlight="pre > code.html > .hljs-tag:first-child">opening</strong> and <strong class="fragment highlight-blue" data-fragment-index="7" data-highlight="pre > code.html > .hljs-tag:last-child">closing</strong> tags</p>
+                <aside class="notes">
+                    <p>Synthesize things students said in discussion.</p>
+                </aside>
+            </section>
+            <section>
+                <h2>Most elements have:</h2>
+                <!-- TODO: may make brackets and backslash have tooltips -->
+                <pre class="emphasize"><code data-trim class="html text-center">
+<p>content</p>
+                </code></pre>
+                <p><strong class="fragment highlight-red" data-fragment-index="1" data-highlight="pre > code.html > .hljs-tag:first-child">opening tag</strong></p>
+                <p><strong class="fragment highlight-green" data-fragment-index="2" data-highlight="pre > code.html">Some content</strong></p>
+                <p><strong class="fragment highlight-blue" data-fragment-index="3" data-highlight="pre > code.html > .hljs-tag:last-child">closing tag</strong></p>
+            </section>
+            <section>
+                <h2>Content can be more HTML</h2>
+                <pre><code data-trim>
+<body.>
+    <h1>Hello world!</h1>
+    <p>I am pretty awesome.</p>
+</body.>
+                </code></pre>
+                <aside class="notes">
+                    <p>Here, the "body" element contains the "heading1" and "paragraph" elements.</p>
+                    <p>And body refers to the part of the web page that we can see in the window.</p>
+                </aside>
+            </section>
+            <section>
+                <!-- TODO: Break this down more. Probably need one or two slides to build up to this. -->
+                <pre>
+                    <code data-trim class="html">
+<!DOCTYPE html.>
+<html.>
+    <head.>
+        <title.>My first page</title.>
+    </head.>
+    <body.>
+        <h1>Hello world!</h1>
+        <p>This is my webpage.</p>
+    </body.>
+</html.>
+                    </code>
+                </pre>
+                <aside class="notes">
+                    <p>This is the starting point for every HTML5 page on the web!</p>
+                </aside>
+            </section>
+            <!-- Maybe add a slide here for in case we get to this section with important and fun elements to experiment with. -->
+            <!-- i.e. heading2 - heading6, anchor element, image element, division, unordered and ordered lists -->
+            <section>
+                <h2>Check out some cool tags here:</h2>
+                <!-- TODO: list one or two fun tag reference pages here -->
+            </section>
+            <section>
+                <h2>Credits</h2>
+                <!-- TODO: link these -->
+                <ul>
+                    <li>Built using
+                        <ul>
+                            <li>Reveal.js</li>
+                            <li>Highlight.js</li>
+                            <li>Bootstrap</li>
+                            <li>FontAwesome</li>
+                        </ul>
+                    </li>
+                    <li>View these slides at: </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="lib/revealjs/lib/js/head.min.js"></script>
+    <script type="text/javascript" src="lib/revealjs/js/reveal.js"></script>
+    <script type="text/javascript" src="assets/js/index.js"></script>
+</body>
+</html>
