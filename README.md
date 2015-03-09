@@ -1,4 +1,6 @@
-# This is the Materials repo for Code Park High School classes
+# Code Park High School Class Materials
+
+This is the Materials repo for Code Park High School classes
 
 Currently only has lesson one slides, but will grow to include tickets and printed materials.  Is intended to have everything to do with classes that is not the curriculum itself, and starter project files.  Those will be in separate repos.
 
