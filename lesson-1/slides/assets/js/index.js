@@ -96,6 +96,7 @@
 
             openingTag = slideChangeEvent.currentSlide.querySelectorAll('pre > code.html > .hljs-tag:first-child')
             closingTag = slideChangeEvent.currentSlide.querySelectorAll('pre > code.html > .hljs-tag:last-child')
+            closingTagTitleNode = closingTag[0].childNodes[1];
 
             var lBracket = document.createElement('span');
             lBracket.textContent = "<";
@@ -136,7 +137,8 @@
             openingTag[0].replaceChild(rBracket, openingTag[0].childNodes[2]);
 
             closingTag[0].replaceChild(lastLBracket, closingTag[0].childNodes[0]);
-            closingTag[0].replaceChild(fSlash, closingTag[0].childNodes[2]);
+            closingTag[0].replaceChild(fSlash, closingTag[0].childNodes[1]);
+            closingTag[0].replaceChild(closingTagTitleNode, closingTag[0].childNodes[2]);
             closingTag[0].appendChild(lastBracket);
 
             $('[data-toggle="tooltip"]').tooltip();
