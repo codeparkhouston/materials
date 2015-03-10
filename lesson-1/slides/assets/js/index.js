@@ -26,6 +26,8 @@
         // Some sneaky stuffs because highlight js be parsing out some tags we need to show in the code
         checkAndShowSneakyTags( slideChangeEvent );
 
+        funkyToolTipBusiness( slideChangeEvent );
+
     });
 
 
@@ -38,15 +40,25 @@
 
 
 
+
     function checkAndShowSneakyTags(slideChangeEvent){
-        var highlightTitles = slideChangeEvent.currentSlide.querySelectorAll('.hljs-title');
+        var highlightTitles = slideChangeEvent.currentSlide.querySelectorAll('.hljs-title, .hljs-attribute');
+        var highlightTags = slideChangeEvent.currentSlide.querySelectorAll('.html.hljs > .hljs-tag');
+        var docTextNode = document.createTextNode('< !');
 
         highlightTitles = Array.prototype.slice.call(highlightTitles, 0);
+        highlightTags = Array.prototype.slice.call(highlightTags, 0);
 
         highlightTitles.forEach(function(element){
             if(element.textContent.indexOf('.') == (element.textContent.length - 1)){
 
                 element.textContent = element.textContent.slice(0, -1);
+            }
+        });
+
+        highlightTags.forEach(function(element){
+            if(element.childNodes[0].data == '< !'){
+                element.childNodes[0].data = '<!';
             }
         });
     }
@@ -73,6 +85,76 @@
     }
 
 
+    function funkyToolTipBusiness(slideChangeEvent){
+        var openingTag, closingTag;
+        if(slideChangeEvent.currentSlide.dataset.assignPopovers){
+
+            if(slideChangeEvent.currentSlide.querySelectorAll('.tipped').length){
+                showToolTips();
+                return;
+            }
+
+            openingTag = slideChangeEvent.currentSlide.querySelectorAll('pre > code.html > .hljs-tag:first-child')
+            closingTag = slideChangeEvent.currentSlide.querySelectorAll('pre > code.html > .hljs-tag:last-child')
+
+            var lBracket = document.createElement('span');
+            lBracket.textContent = "<";
+            lBracket.dataset.toggle = 'tooltip';
+            lBracket.title = 'Left-angle bracket (Less-than sign)';
+            lBracket.dataset.content = 'Less-than sign';
+            lBracket.dataset.container = '[data-assign-popovers]';
+            lBracket.dataset.placement = 'left';
+            lBracket.dataset.trigger = 'click';
+            lBracket.className = 'tipped';
+
+            var lastLBracket = lBracket.cloneNode(true);
+            lastLBracket.dataset.placement = 'bottom';
+
+            var rBracket = document.createElement('span');
+            rBracket.textContent = ">";
+            rBracket.dataset.toggle = 'tooltip';
+            rBracket.title = 'Right-angle bracket (Greater-than sign)';
+            rBracket.dataset.content = 'Greater-than sign';
+            rBracket.dataset.container = '[data-assign-popovers]';
+            rBracket.dataset.placement = 'top';
+            rBracket.dataset.trigger = 'click';
+            rBracket.className = 'tipped';
+
+            var lastBracket = rBracket.cloneNode(true);
+            lastBracket.dataset.placement = 'right';
+
+            var fSlash = document.createElement('span');
+            fSlash.textContent = "/";
+            fSlash.dataset.toggle = 'tooltip';
+            fSlash.title = 'Forward slash';
+            fSlash.dataset.container = '[data-assign-popovers]';
+            fSlash.dataset.placement = 'top';
+            fSlash.dataset.trigger = 'click';
+            fSlash.className = 'tipped';
+
+            openingTag[0].replaceChild(lBracket, openingTag[0].childNodes[0]);
+            openingTag[0].replaceChild(rBracket, openingTag[0].childNodes[2]);
+
+            closingTag[0].replaceChild(lastLBracket, closingTag[0].childNodes[0]);
+            closingTag[0].replaceChild(fSlash, closingTag[0].childNodes[2]);
+            closingTag[0].appendChild(lastBracket);
+
+            $('[data-toggle="tooltip"]').tooltip();
+            showToolTips();
+        }else{
+            $('[data-toggle="tooltip"]').tooltip('hide');
+        }
+    }
+
+
+    function showToolTips(){
+
+        $('[data-toggle="tooltip"]').each(function(iter, element){
+            setTimeout(function(){
+                $(element).tooltip('show');
+            }, 1000)
+        });
+    }
     /**
      * Some functions stolen from the notes html from reveal js lib for timers on a slide.
      *
