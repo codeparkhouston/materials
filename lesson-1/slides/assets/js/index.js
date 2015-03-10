@@ -140,7 +140,7 @@
             closingTag[0].appendChild(lastBracket);
 
             $('[data-toggle="tooltip"]').tooltip();
-            showToolTips();
+            // showToolTips();
         }else{
             $('[data-toggle="tooltip"]').tooltip('hide');
         }
