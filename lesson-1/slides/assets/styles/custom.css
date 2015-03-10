@@ -20,11 +20,24 @@
 }
 
 .reveal .emphasize {
-    font-size: 1.35em;
+    font-size: 1.25em;
+}
+.reveal .double-emphasize {
+    font-size: 1.5em;
 }
 
-.reveal li pre, .reveal pre.emphasize{
+.reveal li pre {
     width: 100%;
+}
+
+.reveal pre.emphasize{
+    width: 120%;
+    margin-left: -10%;
+}
+
+.reveal pre.double-emphasize{
+    width: 120%;
+    margin-left: -10%;
 }
 
 .reveal .slides section .fragment.highlight.visible{
@@ -36,11 +49,77 @@
     visibility: visible;
 }
 
-.reveal .slides section .fragment.hljs-tag.visible{
-    font-size: 2em;
-    display: inline-block;
-    margin: 0.5em;
+.reveal .slides section .fragment.highlight-big.visible{
+    font-size: 1.5em;
 }
+
+.reveal .slides section .fragment.highlight-big{
+    opacity: 1;
+    visibility: visible;
+}
+
+.reveal .slides section .fragment.hljs-tag.visible{
+    font-size: 1.25em;
+    display: inline-block;
+    margin: 0 0.25em;
+}
+
+/* iono, some supa supa jank ish going on. */
+/*.reveal .tooltip.top:nth-of-type(4) .tooltip-inner{
+    margin-left: 75%;
+}*/
+
+.reveal .tooltip-inner{
+    max-width: 340px;
+    min-width: 340px;
+    padding: 10px;
+    margin: 25px;
+}
+
+.reveal .tooltip.bottom .tooltip-arrow {
+    margin-left: -32px;
+    border-width: 0 32px 32px;
+    border-style: solid;
+    border-color: transparent;
+    border-bottom-color: #000;
+}
+
+.reveal .tooltip.top .tooltip-arrow {
+    margin-left: -32px;
+    border-width: 32px 32px 0;
+    border-style: solid;
+    border-color: transparent;
+    border-top-color: #000;
+}
+
+.reveal .tooltip.right .tooltip-arrow {
+    margin-top: -32px;
+    border-width: 32px 32px 32px 0;
+    border-style: solid;
+    border-color: transparent;
+    border-right-color: #000;
+}
+
+.reveal .tooltip.left .tooltip-arrow {
+    margin-top: -32px;
+    border-width: 32px 0 32px 32px;
+    border-style: solid;
+    border-color: transparent;
+    border-left-color: #000;
+}
+
+.reveal .tipped{
+    display: inline-block;
+    text-align: center;
+    width: 1.5em;
+    margin: 0 0.25em;
+    cursor: pointer;
+}
+
+.reveal .tipped[aria-describedby]{
+    background: #000;
+}
+
 
 /* Timer Styles */
 .reveal .reveal-time.hidden {
