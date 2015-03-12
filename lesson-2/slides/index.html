@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson One Slides</title>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/styles/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/revealjs/css/reveal.css">
+    <link rel="stylesheet" type="text/css" href="lib/revealjs/css/theme/white.css">
+    <link rel="stylesheet" href="lib/revealjs/lib/css/monokai-sublime.css">
+    <link href='http://fonts.googleapis.com/css?family=Muli:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="assets/styles/custom.css">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Welcome!</h1>
+                <p>Please sign in and fill out the handout.</p>
+            </section>
+            <section>
+                <h2>Schedule Updates</h2>
+                <p>3:45 PM - 5:00 PM<br/><small>Class</small></p>
+                <p>5:00 PM - 5:30 PM<br/><small><i>(optional)</i> Additional Workshop Time</small></p>
+            </section>
+            <section>
+                <img src="assets/images/chrome-default.png">
+                <aside class="notes">
+                    From http://superuser.com/questions/668054/why-dont-i-have-a-make-google-chrome-the-default-browser-button-in-my-chrome
+                </aside>
+            </section>
+            <section>
+                <h2>Our HTML foundation</h2>
+                <pre><code data-trim class="html">
+< !DOCTYPE html.>
+<html.>
+    <head.>
+        <title.>My first page</title.>
+    </head.>
+    <body.>
+        <h1>Hello world!</h1>
+        <p>This is my webpage.</p>
+    </body.>
+</html.>
+                </code></pre>
+            </section>
+            <section data-assign-popovers="tags">
+                <pre class="emphasize"><code data-trim class="html text-center">
+<p>content</p>
+                </code></pre>
+                <aside class="notes">
+                    <p>Click on tags to show tooltips about tags.</p>
+                </aside>
+            </section>
+            <section data-transition="fade">
+                <h2>Let's try an image!</h2>
+                <pre class="emphasize"><code data-trim class="html">
+<img src="assets/images/glasses.jpg">
+                </code></pre>
+                <p>ctrl + s -- helps you save</p>
+                <p>alt + tab -- helps you switching windows</p>
+            </section>
+            <section data-assign-popovers="attributes" data-transition="fade">
+                <h2>&nbsp;</h2>
+                <pre class="emphasize"><code data-trim class="html">
+<img src="assets/images/glasses.jpg">
+                </code></pre>
+                <p class="fragment" data-fragment-index="1">If there were HTML for pizza...</p>
+                <pre class="emphasize-bit fragment" data-fragment-index="1" data-cut=".hljs-tag:last-child"><code data-trim class="html">
+<pizza size="large" crust="thin" type="pepperoni"></pizza>
+                </code></pre>
+                <aside class="notes">
+                    Example taken from https://dash.generalassemb.ly/projects/annas-website-1 =).
+                </aside>
+            </section>
+            <section class="container">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h4>Absolute URL</h4>
+                        <i class="fragment" data-fragment-index="1"><small>http://codeparkhouston.com/materials/lesson-2/slides/assets/images/glasses.jpg</small></i>
+                        <ul>
+                            <li class="fragment" data-fragment-index="2">Starts with http:// or https://</li>
+                            <li class="fragment" data-fragment-index="3">Has full domain</li>
+                            <li class="fragment" data-fragment-index="4">Will <i>absolutely</i> go to where the URL points no matter where you go to the link from *</li>
+                        </ul>
+                        <p class="fragment" data-fragment-index="5"><small>* Unless some hackery is going on ;)</small></p>
+                    </div>
+                    <div class="col-xs-6">
+                        <h4>Relative URL</h4>
+                        <i class="fragment" data-fragment-index="1"><small><strike>http://codeparkhouston.com/materials/lesson-2/slides/</strike>assets/images/glasses.jpg</small></i>
+                        <ul>
+                            <li class="fragment" data-fragment-index="2">Does not start with http:// or https://</li>
+                            <li class="fragment" data-fragment-index="3">Does not have domain</li>
+                            <li class="fragment" data-fragment-index="4">Where the URL points to is <i>relative</i> to where you are accessing it from</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>Other single tag elements</h2>
+            </section>
+            <section>
+                <h2>Credits</h2>
+                <ul>
+                    <li>Images and diagrams influenced by <a href="http://htmlandcssbook.com/" target="_blank">HTML and CSS</a> book</li>
+                    <li>Built using
+                        <ul>
+                            <li><a href="https://dash.generalassemb.ly/projects/annas-website-1" target="_blank">Pizza HTML Tag</a><br/><small>Dash General Assembly Tutorial</small>
+                            </li>
+                            <li><small><a href="http://lab.hakim.se/reveal-js/" target="_blank">Reveal.js</a><br/>HTML slide show framework</small>
+                            </li>
+                            <li><small><a href="https://highlightjs.org/" target="_blank">Highlight.js</a><br/>Code highlighting library</small></li>
+                            <li><small><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a><br/>CSS framework -- used some styles and tooltips</small></li>
+                            <li><small><a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">FontAwesome</a><br/>Cool icons</small></li>
+                        </ul>
+                    </li>
+                    <li>View these slides at <a href="http://codeparkhouston.com/materials/lesson-1/slides/" target="_blank">http://codeparkhouston.com/materials/lesson-2/slides/</a>.</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="lib/jquery/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="lib/revealjs/lib/js/head.min.js"></script>
+    <script type="text/javascript" src="lib/revealjs/js/reveal.js"></script>
+    <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/index.js"></script>
+</body>
+</html>
