@@ -16,12 +16,12 @@
         transition: 'slide', // none/fade/slide/convex/concave/zoom
         // Optional reveal.js plugins
         dependencies: [
-            // { src: 'lib/revealjs/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-            { src: 'lib/revealjs/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-            // { src: 'lib/revealjs/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-            { src: 'lib/revealjs/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-            // { src: 'lib/revealjs/plugin/zoom-js/zoom.js', async: true },
-            { src: 'lib/revealjs/plugin/notes/notes.js', async: true }
+            // { src: '../../slides/lib/revealjs/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: '../../slides/lib/revealjs/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            // { src: '../../slides/lib/revealjs/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: '../../slides/lib/revealjs/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+            // { src: '../../slides/lib/revealjs/plugin/zoom-js/zoom.js', async: true },
+            { src: '../../slides/lib/revealjs/plugin/notes/notes.js', async: true }
         ]
     });
 
