@@ -198,3 +198,16 @@ strike{
 .reveal i.fa {
     font-family:FontAwesome; font-style: normal;
 }
+
+pre code .line{
+    display: block;
+}
+pre code .line.focus{
+    background: rgba(0, 0, 0, .25);
+}
+pre code .line:hover{
+    background: rgba(0, 0, 0, .1);
+}
+pre code .line.focus:hover{
+    background: rgba(0, 0, 0, .4);
+}

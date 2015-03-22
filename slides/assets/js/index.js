@@ -21,7 +21,8 @@
             // { src: '../../slides/lib/revealjs/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
             { src: '../../slides/lib/revealjs/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
             // { src: '../../slides/lib/revealjs/plugin/zoom-js/zoom.js', async: true },
-            { src: '../../slides/lib/revealjs/plugin/notes/notes.js', async: true }
+            { src: '../../slides/lib/revealjs/plugin/notes/notes.js', async: true },
+            { src: '../../slides/lib/revealjs/plugin/reveal-code-focus/code-focus.js', async: true, callback: function(){ RevealCodeFocus(); } }
         ]
     });
 
@@ -138,8 +139,8 @@
 
     function popTags(parent){
 
-        var openingTag = parent.querySelector('pre > code.html > .hljs-tag:first-child'),
-            closingTag = parent.querySelector('pre > code.html > .hljs-tag:last-child');
+        var openingTag = parent.querySelector('pre > code.html .line > .hljs-tag:first-child'),
+            closingTag = parent.querySelector('pre > code.html .line > .hljs-tag:last-child');
 
         openingTag.dataset.toggle = 'tooltip';
         openingTag.title = 'Opening Tag';
@@ -162,8 +163,8 @@
 
         var openingTag, closingTag;
 
-        openingTag = parent.querySelectorAll('pre > code.html > .hljs-tag:first-child');
-        closingTag = parent.querySelectorAll('pre > code.html > .hljs-tag:last-child');
+        openingTag = parent.querySelectorAll('pre > code.html .line > .hljs-tag:first-child');
+        closingTag = parent.querySelectorAll('pre > code.html .line > .hljs-tag:last-child');
         closingTagTitleNode = closingTag[0].childNodes[1];
 
         var lBracket = document.createElement('span');
