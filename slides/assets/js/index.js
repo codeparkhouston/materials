@@ -3,7 +3,8 @@
     var popoverFns = {
         tags : popTags,
         brackets : popBrackets,
-        attributes : popAttrs
+        attributes : popAttrs,
+        css : popCSS
     };
 
     // Full list of configuration options available at:
@@ -117,23 +118,30 @@
         }
     }
 
+    function popCSS(parent){
+        var selector = parent.querySelector('pre > code.css > .line > .hljs-tag'),
+            openingBracket =  parent.querySelector('pre > code.css > .line > .hljs-rules'),
+            closingBracket =  parent.querySelector('pre > code.css > .line > .line:last-child'),
+            rule =  parent.querySelector('pre > code.css > .line > .line:nth-child(3)');
+
+        addToolTip(selector, 'Selector', parent.dataset.assignPopovers);
+        selector.dataset.placement = 'left';
+
+        addToolTip(openingBracket, 'Opening Curly Bracket', parent.dataset.assignPopovers);
+
+        addToolTip(closingBracket, 'Closing Curly Bracket', parent.dataset.assignPopovers);
+        closingBracket.dataset.placement = 'bottom';
+
+        addToolTip(rule, 'Declaration', parent.dataset.assignPopovers);
+
+    }
+
     function popAttrs(parent){
         var attr = parent.querySelector('pre > code.html .hljs-attribute'),
             attrValue = parent.querySelector('pre > code.html .hljs-value');
 
-        attr.dataset.toggle = 'tooltip';
-        attr.title = 'Attribute';
-        attr.dataset.container = '.present[data-assign-popovers='+parent.dataset.assignPopovers+']';
-        attr.dataset.placement = 'top';
-        attr.dataset.trigger = 'click';
-        attr.className += ' tipped';
-
-        attrValue.dataset.toggle = 'tooltip';
-        attrValue.title = 'Attribute\'s Value';
-        attrValue.dataset.container = '.present[data-assign-popovers='+parent.dataset.assignPopovers+']';
-        attrValue.dataset.placement = 'top';
-        attrValue.dataset.trigger = 'click';
-        attrValue.className += ' tipped';
+        addToolTip(attr, 'Attribute', parent.dataset.assignPopovers);
+        addToolTip(attrValue, 'Attribute\'s Value', parent.dataset.assignPopovers);
     }
 
 
@@ -142,20 +150,9 @@
         var openingTag = parent.querySelector('pre > code.html .line > .hljs-tag:first-child'),
             closingTag = parent.querySelector('pre > code.html .line > .hljs-tag:last-child');
 
-        openingTag.dataset.toggle = 'tooltip';
-        openingTag.title = 'Opening Tag';
-        openingTag.dataset.container = '.present[data-assign-popovers='+parent.dataset.assignPopovers+']';
-        openingTag.dataset.placement = 'top';
-        openingTag.dataset.trigger = 'click';
-        openingTag.className += ' tipped';
-
-        closingTag.dataset.toggle = 'tooltip';
-        closingTag.title = 'Closing Tag';
-        closingTag.dataset.container = '.present[data-assign-popovers='+parent.dataset.assignPopovers+']';
+        addToolTip(openingTag, 'Opening Tag', parent.dataset.assignPopovers);
+        addToolTip(closingTag, 'Closing Tag', parent.dataset.assignPopovers);
         closingTag.dataset.placement = 'bottom';
-        closingTag.dataset.trigger = 'click';
-        closingTag.className += ' tipped';
-
     }
 
 
@@ -169,38 +166,26 @@
 
         var lBracket = document.createElement('span');
         lBracket.textContent = "<";
-        lBracket.dataset.toggle = 'tooltip';
-        lBracket.title = 'Left-angle bracket (Less-than sign)';
-        lBracket.dataset.content = 'Less-than sign';
-        lBracket.dataset.container = '.present[data-assign-popovers='+parent.dataset.assignPopovers+']';
+
+        addToolTip(lBracket, 'Left-angle bracket (Less-than sign)', parent.dataset.assignPopovers);
         lBracket.dataset.placement = 'left';
-        lBracket.dataset.trigger = 'click';
-        lBracket.className = 'tipped';
 
         var lastLBracket = lBracket.cloneNode(true);
         lastLBracket.dataset.placement = 'bottom';
 
         var rBracket = document.createElement('span');
         rBracket.textContent = ">";
-        rBracket.dataset.toggle = 'tooltip';
-        rBracket.title = 'Right-angle bracket (Greater-than sign)';
-        rBracket.dataset.content = 'Greater-than sign';
-        rBracket.dataset.container = '.present[data-assign-popovers='+parent.dataset.assignPopovers+']';
-        rBracket.dataset.placement = 'top';
-        rBracket.dataset.trigger = 'click';
-        rBracket.className = 'tipped';
+
+        addToolTip(rBracket, 'Right-angle bracket (Greater-than sign)', parent.dataset.assignPopovers);
 
         var lastBracket = rBracket.cloneNode(true);
         lastBracket.dataset.placement = 'right';
 
         var fSlash = document.createElement('span');
         fSlash.textContent = "/";
-        fSlash.dataset.toggle = 'tooltip';
-        fSlash.title = 'Forward slash';
-        fSlash.dataset.container = '.present[data-assign-popovers='+parent.dataset.assignPopovers+']';
-        fSlash.dataset.placement = 'top';
-        fSlash.dataset.trigger = 'click';
-        fSlash.className = 'tipped';
+
+        addToolTip(fSlash, 'Forward Slash', parent.dataset.assignPopovers);
+
 
         openingTag[0].replaceChild(lBracket, openingTag[0].childNodes[0]);
         openingTag[0].replaceChild(rBracket, openingTag[0].childNodes[2]);
@@ -209,6 +194,17 @@
         closingTag[0].replaceChild(fSlash, closingTag[0].childNodes[1]);
         closingTag[0].replaceChild(closingTagTitleNode, closingTag[0].childNodes[2]);
         closingTag[0].appendChild(lastBracket);
+    }
+
+    function addToolTip(element, label, popoverName){
+
+        element.dataset.toggle = 'tooltip';
+        element.title = label;
+        element.dataset.container = '.present[data-assign-popovers='+popoverName+']';
+        element.dataset.placement = 'top';
+        element.dataset.trigger = 'click';
+        element.className += ' tipped';
+
     }
 
 

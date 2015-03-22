@@ -202,6 +202,10 @@ strike{
 pre code .line{
     display: block;
 }
+.reveal .tipped.line[data-original-title='Declaration']{
+    display: block;
+    text-align: left;
+}
 pre code .line.focus{
     background: rgba(0, 0, 0, .25);
 }
