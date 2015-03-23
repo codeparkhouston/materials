@@ -9,11 +9,12 @@ Slides made using the excellent [reveal.js](https://github.com/hakimel/reveal.js
 
 ## In Progress
 
-- [ ] [Lesson 2 Slides](http://codeparkhouston.com/materials/lesson-2/slides/)
+- [ ] Lesson 3 Slides
 
 
 ## Completed
 
+- [x] [Lesson 2 Slides](http://codeparkhouston.com/materials/lesson-2/slides/)
 - [x] [Lesson 1 Slides](http://codeparkhouston.com/materials/lesson-1/slides/)
 
 ## Roadmap
