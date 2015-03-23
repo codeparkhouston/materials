@@ -4,8 +4,15 @@
         tags : popTags,
         brackets : popBrackets,
         attributes : popAttrs,
-        css : popCSS
+        css : popCSS,
+        'css-multi' : popCSSMulti
+    },
+    liveUpdates = {
+        updateSlideColor : updateSlideColor,
+        updateElement : updateElement
     };
+
+    _.mixin(s.exports());
 
     // Full list of configuration options available at:
     // https://github.com/hakimel/reveal.js#configuration
@@ -43,6 +50,8 @@
             $(element).find($(element).data('cut')).remove();
             $(element).data('cut', false);
         });
+
+        bindCodeUpdates( slideChangeEvent );
     });
 
 
@@ -118,6 +127,85 @@
         }
     }
 
+
+    function bindCodeUpdates(slideChangeEvent){
+
+        var editors = slideChangeEvent.currentSlide.querySelectorAll('code[contenteditable]');
+
+        editors = Array.prototype.slice.call(editors);
+
+        editors.forEach(function(editor){
+            if(editor.dataset.onchange){
+                editor.parentSlide = slideChangeEvent.currentSlide;
+                editor.slideIndex = Array.prototype.indexOf.call(slideChangeEvent.currentSlide.parentElement.children, editor.parentSlide);
+                editor.addEventListener('focusout', liveUpdates[editor.dataset.onchange]);
+                liveUpdates[editor.dataset.onchange].call(editor);
+            }
+        });
+    }
+
+
+    function updateSlideColor(){
+        document.querySelector('.backgrounds').children[this.slideIndex].style.background = this.querySelector('.hljs-rule > .hljs-value').innerText.trim();
+        this.parentSlide.querySelector('.slide-color').innerText = this.querySelector('.hljs-rule > .hljs-value').innerText.trim();
+    }
+
+    function updateElement(){
+        var elementStyle = {};
+        this.parentSlide.querySelector('.style-sentence').innerHTML = buildCSSSentence(this, elementStyle);
+        _.assign(this.parentSlide.querySelector('p').style, elementStyle);
+    }
+
+    function buildCSSSentence(editor, elementStyle){
+        var lines = editor.querySelectorAll('.line > .line'),
+            propValPairs = [], propertyIndexes = {};
+
+        lines = Array.prototype.slice.call(lines);
+
+        lines.forEach(function(line, iter){
+            var lineRule = line.innerText.replace(';','').trim(),
+                propValString, rules, property, value;
+
+            if(lineRule === '}'){
+                return;
+            }
+
+            propValString = lineRule.replace(': ', ' is ');
+            rules = lineRule.split(': ');
+            property = rules[0];
+            value = rules[1];
+
+            elementStyle[_.camelize(property)] = value;
+
+            if(typeof propertyIndexes[property] === 'number'){
+                propValPairs[propertyIndexes[property]] = propValString;
+                return;
+            }
+
+            propertyIndexes[property] = propValPairs.length;
+            propValPairs.push(propValString);
+        });
+
+        if(propValPairs.length > 1){
+            propValPairs[propValPairs.length - 1] = 'and ' + propValPairs[propValPairs.length - 1];
+        }
+
+        return propValPairs.join(', <br>');
+    }
+
+
+
+    function popCSSMulti(parent){
+        var propertyName = parent.querySelector('pre > code.css > .line .hljs-attribute'),
+            propertyValue =  parent.querySelector('pre > code.css > .line .hljs-value');
+
+        addToolTip(propertyName, 'Property', parent.dataset.assignPopovers);
+        addToolTip(propertyValue, 'Value', parent.dataset.assignPopovers);
+        propertyValue.dataset.placement = 'right';
+
+    }
+
+
     function popCSS(parent){
         var selector = parent.querySelector('pre > code.css > .line > .hljs-tag'),
             openingBracket =  parent.querySelector('pre > code.css > .line > .hljs-rules'),
@@ -125,7 +213,7 @@
             rule =  parent.querySelector('pre > code.css > .line > .line:nth-child(3)');
 
         addToolTip(selector, 'Selector', parent.dataset.assignPopovers);
-        selector.dataset.placement = 'left';
+        selector.dataset.placement = 'top';
 
         addToolTip(openingBracket, 'Opening Curly Bracket', parent.dataset.assignPopovers);
 
@@ -133,8 +221,8 @@
         closingBracket.dataset.placement = 'bottom';
 
         addToolTip(rule, 'Declaration', parent.dataset.assignPopovers);
-
     }
+
 
     function popAttrs(parent){
         var attr = parent.querySelector('pre > code.html .hljs-attribute'),
@@ -204,7 +292,6 @@
         element.dataset.placement = 'top';
         element.dataset.trigger = 'click';
         element.className += ' tipped';
-
     }
 
 
@@ -216,6 +303,10 @@
             }, 1000)
         });
     }
+
+
+
+
     /**
      * Some functions stolen from the notes html from reveal js lib for timers on a slide.
      *
