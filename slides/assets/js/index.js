@@ -3,8 +3,16 @@
     var popoverFns = {
         tags : popTags,
         brackets : popBrackets,
-        attributes : popAttrs
+        attributes : popAttrs,
+        css : popCSS,
+        'css-multi' : popCSSMulti
+    },
+    liveUpdates = {
+        updateSlideColor : updateSlideColor,
+        updateElement : updateElement
     };
+
+    _.mixin(s.exports());
 
     // Full list of configuration options available at:
     // https://github.com/hakimel/reveal.js#configuration
@@ -21,7 +29,8 @@
             // { src: '../../slides/lib/revealjs/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
             { src: '../../slides/lib/revealjs/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
             // { src: '../../slides/lib/revealjs/plugin/zoom-js/zoom.js', async: true },
-            { src: '../../slides/lib/revealjs/plugin/notes/notes.js', async: true }
+            { src: '../../slides/lib/revealjs/plugin/notes/notes.js', async: true },
+            { src: '../../slides/lib/revealjs/plugin/reveal-code-focus/code-focus.js', async: true, callback: function(){ RevealCodeFocus(); } }
         ]
     });
 
@@ -41,6 +50,8 @@
             $(element).find($(element).data('cut')).remove();
             $(element).data('cut', false);
         });
+
+        bindCodeUpdates( slideChangeEvent );
     });
 
 
@@ -116,45 +127,120 @@
         }
     }
 
+
+    function bindCodeUpdates(slideChangeEvent){
+
+        var editors = slideChangeEvent.currentSlide.querySelectorAll('code[contenteditable]');
+
+        editors = Array.prototype.slice.call(editors);
+
+        editors.forEach(function(editor){
+            if(editor.dataset.onchange){
+                editor.parentSlide = slideChangeEvent.currentSlide;
+                editor.slideIndex = Array.prototype.indexOf.call(slideChangeEvent.currentSlide.parentElement.children, editor.parentSlide);
+                editor.addEventListener('focusout', liveUpdates[editor.dataset.onchange]);
+                liveUpdates[editor.dataset.onchange].call(editor);
+            }
+        });
+    }
+
+
+    function updateSlideColor(){
+        document.querySelector('.backgrounds').children[this.slideIndex].style.background = this.querySelector('.hljs-rule > .hljs-value').innerText.trim();
+        this.parentSlide.querySelector('.slide-color').innerText = this.querySelector('.hljs-rule > .hljs-value').innerText.trim();
+    }
+
+    function updateElement(){
+        var elementStyle = {};
+        this.parentSlide.querySelector('.style-sentence').innerHTML = buildCSSSentence(this, elementStyle);
+        _.assign(this.parentSlide.querySelector('p').style, elementStyle);
+    }
+
+    function buildCSSSentence(editor, elementStyle){
+        var lines = editor.querySelectorAll('.line > .line'),
+            propValPairs = [], propertyIndexes = {};
+
+        lines = Array.prototype.slice.call(lines);
+
+        lines.forEach(function(line, iter){
+            var lineRule = line.innerText.replace(';','').trim(),
+                propValString, rules, property, value;
+
+            if(lineRule === '}'){
+                return;
+            }
+
+            propValString = lineRule.replace(': ', ' is ');
+            rules = lineRule.split(': ');
+            property = rules[0];
+            value = rules[1];
+
+            elementStyle[_.camelize(property)] = value;
+
+            if(typeof propertyIndexes[property] === 'number'){
+                propValPairs[propertyIndexes[property]] = propValString;
+                return;
+            }
+
+            propertyIndexes[property] = propValPairs.length;
+            propValPairs.push(propValString);
+        });
+
+        if(propValPairs.length > 1){
+            propValPairs[propValPairs.length - 1] = 'and ' + propValPairs[propValPairs.length - 1];
+        }
+
+        return propValPairs.join(', <br>');
+    }
+
+
+
+    function popCSSMulti(parent){
+        var propertyName = parent.querySelector('pre > code.css > .line .hljs-attribute'),
+            propertyValue =  parent.querySelector('pre > code.css > .line .hljs-value');
+
+        addToolTip(propertyName, 'Property', parent.dataset.assignPopovers);
+        addToolTip(propertyValue, 'Value', parent.dataset.assignPopovers);
+        propertyValue.dataset.placement = 'right';
+
+    }
+
+
+    function popCSS(parent){
+        var selector = parent.querySelector('pre > code.css > .line > .hljs-tag'),
+            openingBracket =  parent.querySelector('pre > code.css > .line > .hljs-rules'),
+            closingBracket =  parent.querySelector('pre > code.css > .line > .line:last-child'),
+            rule =  parent.querySelector('pre > code.css > .line > .line:nth-child(3)');
+
+        addToolTip(selector, 'Selector', parent.dataset.assignPopovers);
+        selector.dataset.placement = 'top';
+
+        addToolTip(openingBracket, 'Opening Curly Bracket', parent.dataset.assignPopovers);
+
+        addToolTip(closingBracket, 'Closing Curly Bracket', parent.dataset.assignPopovers);
+        closingBracket.dataset.placement = 'bottom';
+
+        addToolTip(rule, 'Declaration', parent.dataset.assignPopovers);
+    }
+
+
     function popAttrs(parent){
         var attr = parent.querySelector('pre > code.html .hljs-attribute'),
             attrValue = parent.querySelector('pre > code.html .hljs-value');
 
-        attr.dataset.toggle = 'tooltip';
-        attr.title = 'Attribute';
-        attr.dataset.container = '.present[data-assign-popovers='+parent.dataset.assignPopovers+']';
-        attr.dataset.placement = 'top';
-        attr.dataset.trigger = 'click';
-        attr.className += ' tipped';
-
-        attrValue.dataset.toggle = 'tooltip';
-        attrValue.title = 'Attribute\'s Value';
-        attrValue.dataset.container = '.present[data-assign-popovers='+parent.dataset.assignPopovers+']';
-        attrValue.dataset.placement = 'top';
-        attrValue.dataset.trigger = 'click';
-        attrValue.className += ' tipped';
+        addToolTip(attr, 'Attribute', parent.dataset.assignPopovers);
+        addToolTip(attrValue, 'Attribute\'s Value', parent.dataset.assignPopovers);
     }
 
 
     function popTags(parent){
 
-        var openingTag = parent.querySelector('pre > code.html > .hljs-tag:first-child'),
-            closingTag = parent.querySelector('pre > code.html > .hljs-tag:last-child');
+        var openingTag = parent.querySelector('pre > code.html .line > .hljs-tag:first-child'),
+            closingTag = parent.querySelector('pre > code.html .line > .hljs-tag:last-child');
 
-        openingTag.dataset.toggle = 'tooltip';
-        openingTag.title = 'Opening Tag';
-        openingTag.dataset.container = '.present[data-assign-popovers='+parent.dataset.assignPopovers+']';
-        openingTag.dataset.placement = 'top';
-        openingTag.dataset.trigger = 'click';
-        openingTag.className += ' tipped';
-
-        closingTag.dataset.toggle = 'tooltip';
-        closingTag.title = 'Closing Tag';
-        closingTag.dataset.container = '.present[data-assign-popovers='+parent.dataset.assignPopovers+']';
+        addToolTip(openingTag, 'Opening Tag', parent.dataset.assignPopovers);
+        addToolTip(closingTag, 'Closing Tag', parent.dataset.assignPopovers);
         closingTag.dataset.placement = 'bottom';
-        closingTag.dataset.trigger = 'click';
-        closingTag.className += ' tipped';
-
     }
 
 
@@ -162,44 +248,32 @@
 
         var openingTag, closingTag;
 
-        openingTag = parent.querySelectorAll('pre > code.html > .hljs-tag:first-child');
-        closingTag = parent.querySelectorAll('pre > code.html > .hljs-tag:last-child');
+        openingTag = parent.querySelectorAll('pre > code.html .line > .hljs-tag:first-child');
+        closingTag = parent.querySelectorAll('pre > code.html .line > .hljs-tag:last-child');
         closingTagTitleNode = closingTag[0].childNodes[1];
 
         var lBracket = document.createElement('span');
         lBracket.textContent = "<";
-        lBracket.dataset.toggle = 'tooltip';
-        lBracket.title = 'Left-angle bracket (Less-than sign)';
-        lBracket.dataset.content = 'Less-than sign';
-        lBracket.dataset.container = '.present[data-assign-popovers='+parent.dataset.assignPopovers+']';
+
+        addToolTip(lBracket, 'Left-angle bracket (Less-than sign)', parent.dataset.assignPopovers);
         lBracket.dataset.placement = 'left';
-        lBracket.dataset.trigger = 'click';
-        lBracket.className = 'tipped';
 
         var lastLBracket = lBracket.cloneNode(true);
         lastLBracket.dataset.placement = 'bottom';
 
         var rBracket = document.createElement('span');
         rBracket.textContent = ">";
-        rBracket.dataset.toggle = 'tooltip';
-        rBracket.title = 'Right-angle bracket (Greater-than sign)';
-        rBracket.dataset.content = 'Greater-than sign';
-        rBracket.dataset.container = '.present[data-assign-popovers='+parent.dataset.assignPopovers+']';
-        rBracket.dataset.placement = 'top';
-        rBracket.dataset.trigger = 'click';
-        rBracket.className = 'tipped';
+
+        addToolTip(rBracket, 'Right-angle bracket (Greater-than sign)', parent.dataset.assignPopovers);
 
         var lastBracket = rBracket.cloneNode(true);
         lastBracket.dataset.placement = 'right';
 
         var fSlash = document.createElement('span');
         fSlash.textContent = "/";
-        fSlash.dataset.toggle = 'tooltip';
-        fSlash.title = 'Forward slash';
-        fSlash.dataset.container = '.present[data-assign-popovers='+parent.dataset.assignPopovers+']';
-        fSlash.dataset.placement = 'top';
-        fSlash.dataset.trigger = 'click';
-        fSlash.className = 'tipped';
+
+        addToolTip(fSlash, 'Forward Slash', parent.dataset.assignPopovers);
+
 
         openingTag[0].replaceChild(lBracket, openingTag[0].childNodes[0]);
         openingTag[0].replaceChild(rBracket, openingTag[0].childNodes[2]);
@@ -208,6 +282,16 @@
         closingTag[0].replaceChild(fSlash, closingTag[0].childNodes[1]);
         closingTag[0].replaceChild(closingTagTitleNode, closingTag[0].childNodes[2]);
         closingTag[0].appendChild(lastBracket);
+    }
+
+    function addToolTip(element, label, popoverName){
+
+        element.dataset.toggle = 'tooltip';
+        element.title = label;
+        element.dataset.container = '.present[data-assign-popovers='+popoverName+']';
+        element.dataset.placement = 'top';
+        element.dataset.trigger = 'click';
+        element.className += ' tipped';
     }
 
 
@@ -219,6 +303,10 @@
             }, 1000)
         });
     }
+
+
+
+
     /**
      * Some functions stolen from the notes html from reveal js lib for timers on a slide.
      *

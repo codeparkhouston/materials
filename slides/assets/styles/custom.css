@@ -198,3 +198,22 @@ strike{
 .reveal i.fa {
     font-family:FontAwesome; font-style: normal;
 }
+
+pre code .line{
+    display: block;
+}
+.reveal .tipped.line[data-original-title='Declaration']{
+    display: block;
+    text-align: left;
+}
+pre code .line.focus{
+    background: rgba(0, 0, 0, .5);
+    font-size: 1.25em;
+    line-height: 1.5em;
+}
+pre code .line:hover{
+    background: rgba(0, 0, 0, .1);
+}
+pre code .line.focus:hover{
+    background: rgba(0, 0, 0, .6);
+}
