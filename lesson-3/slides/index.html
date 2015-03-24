@@ -58,7 +58,7 @@
                         <ul>
                             <li class="fragment" data-fragment-index="2">Starts with http:// or https://</li>
                             <li class="fragment" data-fragment-index="3">Has full domain</li>
-                            <li class="fragment" data-fragment-index="4"><i>Absolutely</i> points to where the URL points to</li>
+                            <li class="fragment" data-fragment-index="4">Where you are <i>does not</i> matter</li>
                         </ul>
                     </div>
                     <div class="col-xs-6">
@@ -67,7 +67,7 @@
                         <ul>
                             <li class="fragment" data-fragment-index="2">Does not start with http:// or https://</li>
                             <li class="fragment" data-fragment-index="3">Does not have domain</li>
-                            <li class="fragment" data-fragment-index="4"><i>Relative</i> to where you are accessing it from</li>
+                            <li class="fragment" data-fragment-index="4">Where you are <i>does</i> matter</li>
                         </ul>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
             </section>
 
             <section>
-                <h2>Lists</h2>
+                <h2>Unordered Lists</h2>
                 <pre class="emphasize"><code data-trim class="html">
 <ul>
     <li>Coding</li>
@@ -90,7 +90,7 @@
                 </code></pre>
             </section>
             <section>
-                <h2>Lists</h2>
+                <h2>Ordered Lists</h2>
                 <pre class="emphasize"><code data-trim class="html">
 <ol>
     <li>Coding</li>
@@ -141,21 +141,27 @@
             </section>
             <section data-assign-popovers="css">
                 <h2>CSS Syntax</h2>
-                <pre class="emphasize"><code data-trim contenteditable class="css" data-onchange="updateSlideColor">
+                <pre class="emphasize"><code data-trim contenteditable class="css" data-change-fn="updateSlideColor" data-change-trigger='["focusout"]'>
 body {
-    background: black;
+    background: lightgreen;
 }
                 </code></pre>
                 <p>All body elements' background is <span class="slide-color">black</span>.</p>
             </section>
-            <section data-assign-popovers="css-multi">
-                <pre class="emphasize"><code data-trim contenteditable class="css" data-onchange="updateElement">
+            <section data-assign-popovers="css-multi" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <pre class="emphasize-bit"><code data-trim contenteditable class="css" data-change-fn="updateElement" data-change-trigger='["keydown", "focusout"]'>
 p {
     background: blue;
     color: white;
 }
-                </code></pre>
-                <p>All paragraph elements' <span class="style-sentence"></span>.</p>
+                        </code></pre>
+                    </div>
+                    <div class="col-xs-4">
+                        <p class="text-left">All paragraph elements'<br><span class="style-sentence"></span>.</p>
+                    </div>
+                </div>
             </section>
             <section>
                 <h2>Credits</h2>
