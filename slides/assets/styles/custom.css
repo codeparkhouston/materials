@@ -1,0 +1,219 @@
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6{
+    text-transform: none;
+    font-family: 'Muli', sans-serif;
+    color: #608E53;
+}
+
+.reveal{
+    color: #333;
+}
+
+.reveal section img{
+    border: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+.reveal .emphasize {
+    font-size: 1.25em;
+}
+
+.reveal .emphasize-bit {
+    font-size: 1em;
+}
+.reveal .double-emphasize {
+    font-size: 1.5em;
+}
+
+.reveal li pre {
+    width: 100%;
+}
+
+.reveal pre.emphasize{
+    width: 120%;
+    margin-left: -10%;
+}
+
+.reveal pre.emphasize-bit{
+    width: 120%;
+    margin-left: -10%;
+}
+
+.reveal pre.double-emphasize{
+    width: 120%;
+    margin-left: -10%;
+}
+
+.reveal .slides section .fragment.highlight.visible{
+    color: #58a83d;
+}
+
+.reveal .slides section .fragment.highlight{
+    opacity: 1;
+    visibility: visible;
+}
+
+.reveal .slides section .fragment.highlight-big.visible{
+    font-size: 1.5em;
+}
+
+.reveal .slides section .fragment.highlight-big{
+    opacity: 1;
+    visibility: visible;
+}
+
+.reveal .slides section .fragment.hljs-tag.visible{
+    font-size: 1.25em;
+    display: inline-block;
+    margin: 0 0.25em;
+}
+
+/* iono, some supa supa jank ish going on. */
+/*.reveal .tooltip.top:nth-of-type(4) .tooltip-inner{
+    margin-left: 75%;
+}*/
+
+strike{
+    color: #999;
+}
+
+.reveal .tooltip-inner{
+    max-width: 340px;
+    min-width: 340px;
+    padding: 10px;
+    margin: 25px;
+}
+
+.reveal .tooltip.bottom .tooltip-arrow {
+    margin-left: -32px;
+    border-width: 0 32px 32px;
+    border-style: solid;
+    border-color: transparent;
+    border-bottom-color: #000;
+}
+
+.reveal .tooltip.top .tooltip-arrow {
+    margin-left: -32px;
+    border-width: 32px 32px 0;
+    border-style: solid;
+    border-color: transparent;
+    border-top-color: #000;
+}
+
+.reveal .tooltip.right .tooltip-arrow {
+    margin-top: -32px;
+    border-width: 32px 32px 32px 0;
+    border-style: solid;
+    border-color: transparent;
+    border-right-color: #000;
+}
+
+.reveal .tooltip.left .tooltip-arrow {
+    margin-top: -32px;
+    border-width: 32px 0 32px 32px;
+    border-style: solid;
+    border-color: transparent;
+    border-left-color: #000;
+}
+
+.reveal .tipped{
+    display: inline-block;
+    text-align: center;
+    /*margin: 0 0.25em;*/
+    cursor: pointer;
+}
+
+.reveal .tipped[aria-describedby], .reveal .tipped:hover{
+    background: #000;
+}
+
+
+/* Timer Styles */
+.reveal .reveal-time.hidden {
+    display: none;
+}
+
+.reveal .reveal-time .label {
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 0.66em;
+    color: #666;
+    margin: 0;
+}
+
+.reveal .reveal-time {
+    border-bottom: 1px solid rgba( 200, 200, 200, 0.5 );
+    margin-bottom: 10px;
+    padding: 10px 16px;
+    padding-bottom: 20px;
+    cursor: pointer;
+    margin-top: 2em;
+}
+
+.reveal .reveal-time .reset-button {
+    opacity: 0;
+    float: right;
+    color: #666;
+    text-decoration: none;
+    text-align: right;
+}
+.reveal .reveal-time .reset, .reveal .reveal-time .action{
+    font-size: 0.75em;
+}
+.reveal .reveal-time .reset:hover, .reveal .reveal-time .action:hover{
+    color: #333;
+}
+.reveal .reveal-time .reset i, .reveal .reveal-time .action i{
+    margin-right: 0.5em;
+}
+.reveal .reveal-time:hover .reset-button {
+    opacity: 1;
+}
+
+.reveal .reveal-time .timer,
+.reveal .reveal-time .clock {
+    margin: 0 auto;
+    width: 50%;
+    font-size: 1.9em;
+}
+
+.reveal .reveal-time .timer {
+    /*float: left;*/
+}
+
+.reveal .reveal-time .clock {
+    float: right;
+    text-align: right;
+}
+
+.reveal .reveal-time span.mute {
+    color: #bbb;
+}
+
+.reveal i.fa {
+    font-family:FontAwesome; font-style: normal;
+}
+
+pre code .line{
+    display: block;
+}
+.reveal .tipped.line[data-original-title='Declaration']{
+    display: block;
+    text-align: left;
+}
+pre code .line.focus{
+    background: rgba(0, 0, 0, .5);
+    font-size: 1.25em;
+    line-height: 1.5em;
+}
+pre code .line:hover{
+    background: rgba(0, 0, 0, .1);
+}
+pre code .line.focus:hover{
+    background: rgba(0, 0, 0, .6);
+}
