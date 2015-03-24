@@ -34,7 +34,7 @@
     width: 100%;
 }
 
-.reveal pre.emphasize{
+/*.reveal pre.emphasize{
     width: 120%;
     margin-left: -10%;
 }
@@ -47,7 +47,7 @@
 .reveal pre.double-emphasize{
     width: 120%;
     margin-left: -10%;
-}
+}*/
 
 .reveal .slides section .fragment.highlight.visible{
     color: #58a83d;

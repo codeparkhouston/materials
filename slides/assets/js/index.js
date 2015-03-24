@@ -17,6 +17,8 @@
     // Full list of configuration options available at:
     // https://github.com/hakimel/reveal.js#configuration
     Reveal.initialize({
+        width: '100%',
+        margin: 0.05,
         controls: true,
         progress: true,
         history: true,
@@ -130,16 +132,22 @@
 
     function bindCodeUpdates(slideChangeEvent){
 
-        var editors = slideChangeEvent.currentSlide.querySelectorAll('code[contenteditable]');
+        var editors = slideChangeEvent.currentSlide.querySelectorAll('code[contenteditable]'),
+            events;
 
         editors = Array.prototype.slice.call(editors);
 
         editors.forEach(function(editor){
-            if(editor.dataset.onchange){
+            if(editor.dataset.changeFn){
                 editor.parentSlide = slideChangeEvent.currentSlide;
                 editor.slideIndex = Array.prototype.indexOf.call(slideChangeEvent.currentSlide.parentElement.children, editor.parentSlide);
-                editor.addEventListener('focusout', liveUpdates[editor.dataset.onchange]);
-                liveUpdates[editor.dataset.onchange].call(editor);
+                events = JSON.parse(editor.dataset.changeTrigger);
+
+                events.forEach(function(trigger){
+                    editor.addEventListener(trigger, liveUpdates[editor.dataset.changeFn]);
+                });
+
+                liveUpdates[editor.dataset.changeFn].call(editor);
             }
         });
     }
@@ -150,10 +158,13 @@
         this.parentSlide.querySelector('.slide-color').innerText = this.querySelector('.hljs-rule > .hljs-value').innerText.trim();
     }
 
-    function updateElement(){
+    function updateElement(triggerEvent){
         var elementStyle = {};
-        this.parentSlide.querySelector('.style-sentence').innerHTML = buildCSSSentence(this, elementStyle);
-        _.assign(this.parentSlide.querySelector('p').style, elementStyle);
+
+        if(typeof triggerEvent === 'undefined' || triggerEvent.type === 'focusout' || triggerEvent.keyCode === 13){
+            this.parentSlide.querySelector('.style-sentence').innerHTML = buildCSSSentence(this, elementStyle);
+            _.assign(this.parentSlide.querySelector('p').style, elementStyle);
+        }
     }
 
     function buildCSSSentence(editor, elementStyle){
@@ -166,7 +177,7 @@
             var lineRule = line.innerText.replace(';','').trim(),
                 propValString, rules, property, value;
 
-            if(lineRule === '}'){
+            if(lineRule.length === 0 || lineRule === '}'){
                 return;
             }
 
