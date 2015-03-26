@@ -217,3 +217,19 @@ pre code .line:hover{
 pre code .line.focus:hover{
     background: rgba(0, 0, 0, .6);
 }
+
+.highlight{
+    background: #608E53;
+}
+
+.highlight-border{
+    border: 1px solid #608E53;
+}
+
+.text-green {
+    color: green;
+}
+
+#special {
+    font-weight: bold;
+}
