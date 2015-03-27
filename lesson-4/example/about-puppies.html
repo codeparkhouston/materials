@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Puppies</title>
+    <style>
+        body {
+            background: url(puppies.jpg);
+            margin: 0;
+        }
+        html, body {
+            /* This css forces the html and body elements to be the full width and height of the browser.*/
+            width: 100%;
+            height: 100%;
+        }
+        .backy {
+            background: rgba(0, 0, 0, 0.75);
+            color: #FFFFFF;
+            padding: 40px;
+            margin: auto;
+            width: 80%;
+            height: 100%;
+        }
+        li {
+            line-height: 24px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="backy">
+        <h1>Hello!</h1>
+        <p>This is text on top.</p>
+        <p>Everything inside the div with the backy class will show on top of the transparent black background that is on top of the puppy background.</p>
+        <ul>
+            <li>This is a list</li>
+            <li>Inside of the div with the backy class</li>
+            <li>See how the transparent black of the backy background is on top of the body background?</li>
+            <li>Learn more about colors in CSS <a href="http://www.w3schools.com/cssref/css_colors_legal.asp" target="_blank">here</a></li>
+        </ul>
+        <p>Press <kbd>ctrl + u</kbd> to view the source.</p>
+    </div>
+</body>
+</html>
