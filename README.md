@@ -19,7 +19,6 @@ Slides made using the excellent [reveal.js](https://github.com/hakimel/reveal.js
 
 ## Roadmap
 
-- [ ] Move to using http://jspm.io/
 - [ ] Maybe move individual slides to external markdown
 
 
