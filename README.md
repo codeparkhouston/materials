@@ -9,17 +9,19 @@ Slides made using the excellent [reveal.js](https://github.com/hakimel/reveal.js
 
 ## In Progress
 
-- [ ] Lesson 3 Slides
+- [ ] Lesson 5 Materials
+- [ ] Lesson 6 Materials
 
 
 ## Completed
 
+- [x] [Lesson 4 Slides](http://codeparkhouston.com/materials/lesson-4/slides/)
+- [x] [Lesson 3 Slides](http://codeparkhouston.com/materials/lesson-3/slides/)
 - [x] [Lesson 2 Slides](http://codeparkhouston.com/materials/lesson-2/slides/)
 - [x] [Lesson 1 Slides](http://codeparkhouston.com/materials/lesson-1/slides/)
 
 ## Roadmap
 
-- [ ] Move to using http://jspm.io/
 - [ ] Maybe move individual slides to external markdown
 
 
