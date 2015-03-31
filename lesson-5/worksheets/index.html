@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 5 Worksheets</title>
+    <!-- Most content from https://www.dropbox.com/s/x7kyti0jt6easj0/GeneralAssemblyPacketJeffBlog.docx -->
+    <link rel="stylesheet" type="text/css" href="../../slides/lib/bootstrap/styles/bootstrap.css">
+    <link href='http://fonts.googleapis.com/css?family=Muli:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../slides/lib/revealjs/lib/css/monokai-sublime.css">
+    <script type="text/javascript" src="../../slides/lib/lodash/lodash.min.js"></script>
+    <script type="text/javascript" src="../../slides/lib/revealjs/plugin/highlight/highlight.js"></script>
+    <style type="text/css">
+        .answer-space:before {
+            content: ' ';
+            margin-bottom: 46px;
+            display: block;
+        }
+        .top-heading {
+            margin-bottom: 20px;
+        }
+        .blank-space {
+            border-bottom: 1px solid #333333;
+            min-height: 1.5em;
+        }
+        code.hljs {
+            padding-top: 0.1em;
+            padding-bottom: 0.1em;
+        }
+        code.answer{
+            font-size: 1.5em;
+        }
+        pre.question {
+            margin-bottom: -0.75em;
+            padding: 0;
+        }
+        span.question {
+            background: #FFF;
+            display: inline-block;
+            margin-bottom: -4px;
+        }
+        h4 span.question {
+            border-bottom: 10px solid #fff;
+        }
+        .question code {
+            display: inline-block;
+        }
+        .bordered-box-space{
+            border: 1px solid #333333;
+            min-height: 4em;
+        }
+        li{
+            margin-bottom: 1em;
+        }
+        li * {
+            vertical-align: middle;
+        }
+        li.row{
+            margin-left: 0;
+            margin-right: 0;
+        }
+        li.row > * {
+            margin-top: -1.25em;
+        }
+        li.row [class^=col-]{
+            padding-left: 0;
+        }
+        pre[class^=col-] {
+            padding: 0;
+        }
+        pre[class^=col-] code.hljs {
+            padding: 9.5px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .table-sized th{
+            width: 8%;
+            text-align: center;
+        }
+        .table-bordered > tbody > tr > td{
+            border-right: 4px solid #ddd;
+        }
+        @page {
+            margin: 20px 40px 40px 40px;
+        }
+        @media print {
+            .page-end {
+                page-break-after: always;
+            }
+            .page-end-before {
+                page-break-before: always;
+                padding-top: 20px;
+            }
+            code:not([data-skip]) {
+              background: #23241f !important;
+            }
+            code[data-skip] {
+              background: #f9f2f4 !important;
+            }
+            li {
+                page-break-inside: avoid;
+            }
+            span.question {
+                background: #FFF !important;
+            }
+            .table-bordered > tbody > tr > td{
+                border-right: 4px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row top-heading">
+            <div class="col-xs-4 pull-right">
+                <h4 class="name blank-space"><span class="question">Name: </span></h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <p><strong>Directions:</strong> Project #2 on <strong><a href="http://dash.ga.co" target="_blank">dash.ga.co</a></strong> asks you to create a blog for Jeff.  The project is not a fully functional blog, but it is an intricate webpage using HTML, CSS, and some JavaScript.  Sign up for an account on <strong><a href="http://dash.ga.co" target="_blank">dash.ga.co</a></strong> and walk through the second project while answering the questions below.  After completing this project, you will convert this page into a four page website about yourself or your favorite hobby.</p>
+            </div>
+        </div>        
+        <div class="row">
+            <div class="col-xs-12">
+                <h3>Part 1: Header and Navigation HTML</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <ol>
+                    <li>
+                        <p class="blank-space">
+                            <span class="question">What is the purpose of the <code class="html">&lt;header&gt;</code> tag?</span>
+                        </p>
+                        <p class="blank-space"></p>
+                    </li>
+                    <li>
+                        <p class="blank-space">
+                            <span class="question">What is a navigation bar?</span>
+                        </p>
+                        <ul>
+                            <li>
+                                <p>
+                                    <span class="question">What tag do we use to make a navigation bar?</span>
+                                    <code data-skip=truen class="answer">&lt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;</code>
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p class="blank-space">
+                            <span class="question"><code class="html">&lt;ul&gt;</code> stands for</span>
+                        </p>
+                        <p class="blank-space">
+                            <span class="question"><code class="html">&lt;li&gt;</code> stands for</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="blank-space">
+                            <span class="question">What does the <code class="html">&lt;a&gt;</code> tag do?</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="blank-space">
+                            <span class="question">What would this line of HTML do?  <code class="html">&lt;a href="http://www.google.com"&gt;Google&lt;/a&gt;</code></span>
+                        </p>
+                        <p class="blank-space"></p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+
+
+
+        <div class="row page-end-before">
+            <div class="col-xs-12">
+                <h3>Part 2: Style the Header with CSS</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <ol>
+                    <li>
+                        <p class="blank-space">
+                            <span class="question">What advantages does the <code class="html">&lt;link&gt;</code> tag have over the <code class="html">&lt;style&gt;</code> tag?</span>
+                        </p>
+                        <p class="blank-space"></p>
+                    </li>
+                    <li>
+                        <p class="blank-space">
+                            <span class="question">What is normalize.css?</span>
+                        </p>
+                        <p class="blank-space"></p>
+                    </li>
+                    <li>
+                        <p class="blank-space">
+                            <span class="question">Why do we need to add a padding property to the <code class="html">&lt;ul&gt;</code> tag?</span>
+                        </p>
+                        <p class="blank-space"></p>
+                    </li>
+                    <li>
+                        <p class="blank-space">
+                            <span class="question">What does <code data-skip=true>inline</code> do to a list of items?</span>
+                        </p>
+                        <p class="blank-space"></p>
+                    </li>
+                    <li class="row">
+                        <p class="col-xs-8">
+                            <span class="question">Place the word "HTML" in the box on the right using the padding in this code: <code class="css">padding: 0px 0px 0px 10px;</code>.<br><i><small>Hint: Remember top, right, bottom, left.</small></i></span>
+                        </p>
+                        <div class="col-xs-4 bordered-box-space">&nbsp;</div>
+                    </li>
+                    <li>
+                        <p class="blank-space">
+                            <span class="question">What is the difference between <code data-skip=true>padding</code> and <code data-skip=true>margin</code>?</span>
+                        </p>
+                        <p class="blank-space"></p>
+                    </li>
+                    <li>
+                        <p class="blank-space">
+                            <span class="question">What did <code data-skip=true>border-radius</code> do to the square border around the image?</span>
+                        </p>
+                        <p class="blank-space"></p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+
+
+
+        <div class="row page-end-before">
+            <div class="col-xs-12">
+                <h3>Part 3: Responsive Design and JavaScript</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <ol>
+                    <li>
+                        <p class="blank-space">
+                            <span class="question">Why is responsive design becoming a more important aspect to consider when making a website compared to 10 years ago?</span>
+                        </p>
+                        <p class="blank-space"></p>
+                    </li>
+                    <li>
+                        <p class="blank-space">
+                            <span class="question">Why is it important to center and narrow text on a webpage? (Think visually)</span>
+                        </p>
+                        <p class="blank-space"></p>
+                        <p class="blank-space"></p>
+                    </li>
+                    <li>
+                        <p class="blank-space">
+                            <span class="question">What does this line of HTML do to an object?  <code class="css">margin: 0 auto;</code></span>
+                        </p>
+                        <p class="blank-space"></p>
+                    </li>
+                    <li>
+                        <p class="blank-space">
+                            <span class="question">How does using <code data-skip=true>max-width</code> instead of <code data-skip=true>width</code> improve the readability of any webpage?</span>
+                        </p>
+                        <p class="blank-space"></p>
+                        <p class="blank-space"></p>
+                    </li>
+                    <li class="row">
+                        <div class="col-xs-7">
+                            <p>The media query to the right will be activated when...</p>
+                            <p class="blank-space"></p>
+                            <p class="blank-space"></p>
+                        </div>
+                        <pre class="col-xs-5"><code class="css" data-trim>@media (max-width: 500px) {
+    body {
+        background: red;
+    }
+}</code></pre>
+                    </li>
+                    <li>
+                        <p>
+                            <span class="question">What does each digit of this hexidecimal color code <code data-skip=true>#E78</code> represent?</span>
+                        </p>
+                        <table class="table table-condensed table-bordered table-sized">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">E</th>
+                                    <td></td>
+                                    <th scope="row">7</th>
+                                    <td></td>
+                                    <th scope="row">8</th>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                    <li>
+                        <p>
+                            <span class="question">What is the hex color code for true purple? <code data-skip=true class="answer">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></span>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="blank-space">
+                            <span class="question">What is the programming language that allows websites to be interactive?</span>
+                        </p>
+                        <p class="blank-space"></p>
+                    </li>
+                    <li>
+                        <p>
+                            <span class="question">What tag allows us to add JavaScript to any webpage?</span>
+                            <code data-skip=true class="answer">&lt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;</code>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="blank-space">
+                            <span class="question">What is an event?</span>
+                        </p>
+                        <p class="blank-space"></p>
+                        <p class="blank-space">
+                            <span class="question">How does JavaScript use events?</span>
+                        </p>
+                        <p class="blank-space"></p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="row page-end-before">
+            <div class="col-xs-12">
+                <h3>Part 4: Make it your own</h3>
+                <p>Use the code to make a page about yourself or your favorite hobby!</p>
+                <ol>
+                    <li>Copy the code from the project into a new <code data-skip=true>.html</code> file in NotePad.</li>
+                    <li>Update the any of the content to represent you or your hobby.</li>
+                    <li class="question">Link external pages by adjusting the static <code class="html">&lt;a&gt;</code> tags on the page.</li>
+                    <li><strong>Challenge:</strong> Make the "Like" button on your site work.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var codeElements = document.querySelectorAll('code');
+        codeElements = Array.prototype.slice.apply(codeElements);
+
+        hljs.initHighlightingOnLoad();
+
+        codeElements.forEach(function(element){
+            if(element.dataset.skip){
+                return;
+            }
+            hljs.highlightBlock(element);
+        });
+    </script>
+</body>
+</html>
