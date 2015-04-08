@@ -87,6 +87,18 @@
             display: inline;
             padding: 20px;
         }
+        #article {
+            margin: 0 auto;
+            max-width: 200px;
+            border: 1px solid #000;
+        }
+        #inline li{
+            display: inline;
+            border: 1px solid #000;
+        }
+        #block li{
+            border: 1px solid #000;
+        }
         @page {
             margin: 20px 40px 40px 40px;
         }
@@ -178,23 +190,34 @@ a {
             </div>
             <div class="col-xs-4">
                 <pre><code class="css">
-
+article {
+    margin: 0 auto;
+    max-width: 200px;
+    border: 1px solid #000;
+}
                 </code></pre>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <h3>display: inline; vs display: block;</h3>
+            <div class="col-xs-4">
+                <article id="article">Hello!</article>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12">
-                <h3>Styles order</h3>
+                <h3>display: block vs display: inline</h3>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <h3>Styles order</h3>
+            <div class="col-xs-4">
+                <ul id="block">
+                    <li>This</li>
+                    <li>is</li>
+                    <li>display: block;</li>
+                </ul>
+            </div>
+            <div class="col-xs-4">
+                <ul id="inline">
+                    <li>This</li>
+                    <li>is</li>
+                    <li>display: inline;</li>
+                </ul>
             </div>
         </div>
     </div>
