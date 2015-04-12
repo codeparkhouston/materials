@@ -2,7 +2,7 @@
 
 Today, we are setting up our computer to help us as we make more coding projects.  This will include:
 
-1. Setting up [git](#first-commands)
+1. Setting up [git](./installations/README.md)
 
 1. Setting up a text-editor with "syntax-highlighting" and other tools to help us while coding.
 
