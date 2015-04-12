@@ -9,9 +9,10 @@ Slides made using the excellent [reveal.js](https://github.com/hakimel/reveal.js
 
 ## In Progress
 - [ ] Lesson 8 Materials
+- [ ] Lesson 9 Materials
 
 ## Completed
-- [x] [Lesson 9 Materials](http://codeparkhouston.com/materials/lesson-9/)
+- [x] [Lesson 10 Materials](http://codeparkhouston.com/materials/lesson-10/)
 - [x] [Lesson 7 Materials](http://codeparkhouston.com/materials/lesson-7/)
 - [x] Lesson 5 Materials
 - [x] Lesson 6 Materials

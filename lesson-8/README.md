@@ -1,10 +1,21 @@
+# Development Set-up
+
+Today, we are setting up our computer to help us as we make more coding projects.  This will include:
+
+1. Setting up [git](#first-commands)
+
+1. Setting up a text-editor with "syntax-highlighting" and other tools to help us while coding.
+
+1. Signing up for [github.com](https://github.com), which will help us share code and even put our websites online!
+
+
 Table of Contents
 =================
 
 - [First commands](#first-commands)
 - [Making a repository](#making-a-repository)
 - [Making changes](#making-changes)
-- [Changing the repository timeline](#changing-the-repository-timeline)
+- [Changing the timeline](#changing-the-timeline)
 - [What we've learned so far](#what-weve-learned-so-far)
 	- [Terminal Commands](#terminal-commands)
 	- [Git Commands](#git-commands)
@@ -158,7 +169,7 @@ Let's first try a few things in this "Terminal".
 | `git add hello.txt` | **git**, **add hello.txt** to your "stage" | tells git to keep an eye on the `hello.txt` file |
 | `git commit -m "a message"` | **git**, **commit** these changes as described by this **m**essage | tells git to track the changes of the staged files and describes the change made |
 
-# Changing the repository timeline
+# Changing the timeline
 
 1. Let's make a change in our `hello.txt` and see what git has to say about that.  Go to your `hello.txt` and update it to say
 
