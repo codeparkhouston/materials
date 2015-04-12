@@ -57,7 +57,7 @@ Let's first try a few things in this "Terminal".
 
   again.  You should see ```hello``` listed in the results.
 
-***Congratulations! You've used some of the more common commands of working in the terminal. Armed with these incantations, you're well on your way to becoming a hacker.***
+_Congratulations! You've used some of the more common commands of working in the terminal. Armed with these incantations, you're well on your way to becoming a hacker._
 
 | Command | What it means | What it does |
 | ------- | ------------- | ------------ |
@@ -108,7 +108,7 @@ Let's first try a few things in this "Terminal".
   ls -a
   ```
 
-***If you see something that says `.git`, you've created your first git repository!  The `.git` directory is the secret directory that `git` will use to keep our work safe. We had to give our `list` command a special `-a` flag, for **a**ll, to reveal it.***
+_If you see something that says `.git`, you've created your first git repository!  The `.git` directory is the secret directory that `git` will use to keep our work safe. We had to give our `list` command a special `-a` flag, for **a**ll, to reveal it._
 
 ![A secret door!](https://31.media.tumblr.com/d2cac9af6eec29f71f477d07d81cbaa6/tumblr_inline_n8pnawVld71ruskat.gif)
 
@@ -167,7 +167,7 @@ Let's first try a few things in this "Terminal".
 
   Cool!  We can say `git status` again and see that git knows we haven't changed anything since recording our change.
 
-***You may have noticed, as we work with git, we ask git to do things by typing `git` and then what we want git to do following that. We've tracked your first changes using git!***
+_You may have noticed, as we work with git, we ask git to do things by typing `git` and then what we want git to do following that. We've tracked your first changes using git!_
 
 | Command     | What it means | What it does |
 | ----------- | ------------- | ------------ |
@@ -234,7 +234,7 @@ Tracking our changes in `git` is cool and all, but let's see about time travelli
   Master is the "master" version of our directory.  It will change us back into our original timeline.  Now if we check the contents of our file, we see it with the latest content.
 
 
-***We've just made our first git repository, tracked it's changes, and even saw how to look at a file's history and change the timeline for our directory!***
+_We've just made our first git repository, tracked it's changes, and even saw how to look at a file's history and change the timeline for our directory!_
 
 | Command     | What it means | What it does |
 | ----------- | ------------- | ------------ |
