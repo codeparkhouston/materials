@@ -226,6 +226,8 @@ Let's first try a few things in this "Terminal".
 
 ## Git Commands
 
+| Command     | What it means | What it does |
+| ----------- | ------------- | ------------ |
 | `git init`  | **git init**ialize | Start git tracking |
 | `git status`  | hey **git**, what's your **status**?  | tells us which files have changed since our last commit |
 | `git add hello.txt` | hey **git**, **add hello.txt** to your "stage" | tells git to keep an eye on the `hello.txt` file |
