@@ -108,7 +108,7 @@ Let's first try a few things in this "Terminal".
   ls -a
   ```
 
-  you should see something that says `.git`.  This is the secret folder that `git` will use to keep our work safe in this directory! We had to give our `list` command a special `-a` flag, for **a**ll, to reveal it.
+***If you see something that says `.git`, you've created your first git repository!  The `.git` directory is the secret directory that `git` will use to keep our work safe. We had to give our `list` command a special `-a` flag, for **a**ll, to reveal it.***
 
 ![A secret door!](https://31.media.tumblr.com/d2cac9af6eec29f71f477d07d81cbaa6/tumblr_inline_n8pnawVld71ruskat.gif)
 
@@ -128,7 +128,13 @@ Let's first try a few things in this "Terminal".
 
 1. We can right click on the explorer and make a new text file.  Let's call it `hello.txt`.
 
-1. Double click `hello.txt` to edit it.  We can update it to say, "Hello world!", for example.  Now, if we `ls`, we should see that `hello.txt` is in this `hello` directory.
+1. Double click `hello.txt` to edit it.  We can update it to say,
+
+	```
+	Hello world!
+	```
+
+	for example.  Now, if we `ls`, we should see that `hello.txt` is in this `hello` directory.
 
 1. We can see if `git` has detected any changes by typing and running
 
@@ -159,9 +165,9 @@ Let's first try a few things in this "Terminal".
   1 file changed, 1 insertion(+)
   create mode 100644 hello.txt
 
-  Cool!  We can say `git status` again and see that git has not detected any changes since we last saved.
+  Cool!  We can say `git status` again and see that git knows we haven't changed anything since recording our change.
 
-**You may have noticed, as we work with git, we ask git to do things by typing `git` and then what we want git to do following that.**
+***You may have noticed, as we work with git, we ask git to do things by typing `git` and then what we want git to do following that. We've tracked your first changes using git!***
 
 | Command     | What it means | What it does |
 | ----------- | ------------- | ------------ |
@@ -172,9 +178,13 @@ Let's first try a few things in this "Terminal".
 
 # Changing the timeline
 
+Tracking our changes in `git` is cool and all, but let's see about time travelling...
+
 1. Let's make a change in our `hello.txt` and see what git has to say about that.  Go to your `hello.txt` and update it to say
 
+	```
   Hello world, I am learning git!
+	```
 
   Now, in the terminal, let's ask git what it sees with
 
@@ -224,7 +234,7 @@ Let's first try a few things in this "Terminal".
   Master is the "master" version of our directory.  It will change us back into our original timeline.  Now if we check the contents of our file, we see it with the latest content.
 
 
-***We've just made our first git repository, tracked it's changes, and even saw how to look at a file's history and change timelines!***
+***We've just made our first git repository, tracked it's changes, and even saw how to look at a file's history and change the timeline for our directory!***
 
 | Command     | What it means | What it does |
 | ----------- | ------------- | ------------ |
@@ -258,3 +268,5 @@ Let's first try a few things in this "Terminal".
 | `git diff` | **git**, tell us what's **diff**erent | shows us what has changed since our last commit |
 | `git log` | **git**, give us a **log** | shows us a history of our commits |
 | `git checkout ____` | **git**, **checkout** what's in _____ | switches us to a parallel universe where our files have a history up to the specified commit |
+
+Let's try this again with our site project and [share it online](../lesson-9/README.md)!
