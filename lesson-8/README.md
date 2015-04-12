@@ -10,9 +10,9 @@ Let's first try a few things in this "Terminal".
 
   Press <kbd>Enter</kbd> to run the command.
 
-  This stands for **p** rint&nbsp;&nbsp; **w** orking&nbsp;&nbsp; **d** irectory.  The terminal has automatically put us in our "home" folder, or directory.
+  This stands for **p**rint **w**orking **d**irectory.  The terminal has automatically put us in our "home" folder, or directory.
 
-1. Let's ask the computer to **l** i **s** t what we have in this directory by typing
+1. Let's ask the computer to **l**i**s**t what we have in this directory by typing
 
   ```bash
   ls
@@ -20,7 +20,7 @@ Let's first try a few things in this "Terminal".
 
   Once again, press <kbd>Enter</kbd> to run the command.
 
-1. Neat! Let's **m** a **k** e&nbsp;&nbsp;a **dir** ectory by typing and running
+1. Neat! Let's **m**a**k**e a **dir**ectory by typing and running
 
   ```bash
   mkdir hello
@@ -37,10 +37,10 @@ Let's first try a few things in this "Terminal".
 ***Congratulations! You've used some of the more common commands of working in the terminal. Armed with these incantations, you're well on your way to becoming a hacker.***
 
 | Command | What it means | What it does |
-| -- | -- | -- |
-| `pwd` | **p** rint&nbsp;&nbsp; **w** orking&nbsp;&nbsp; **d** irectory | Tells us where we are |
-| `ls` | **l** i **s** t | List the things that are in this directory |
-| `mkdir` | **m** a **k** e&nbsp;&nbsp;a **dir** ectory | make a new directory in we are |
+| ------- | ------------- | ------------ |
+| `pwd` | **p**rint **w**orking **d**irectory | Tells us where we are |
+| `ls` | **l**i**s**t | List the things that are in this directory |
+| `mkdir` | **m**a**k**e a **dir**ectory | make a new directory in we are |
 
 ![Feel the power...](http://cdn.pastemagazine.com/www/blogs/awesome_of_the_day/harry%20potter%20animated%20gif.gif)
 
@@ -48,7 +48,7 @@ Let's first try a few things in this "Terminal".
 
 1. We want to make this our first "git repository," which is a fancy way to say, we are going to make this "hello" directory trackable and shareable.
 
-  To do things to this directory, we need to be in the directory.  We can **c** hange&nbsp;&nbsp; **d** irectory into ```hello``` by typing and running
+  To do things to this directory, we need to be in the directory.  We can **c**hange **d**irectory into ```hello``` by typing and running
 
   ```bash
   cd hello
@@ -73,7 +73,7 @@ Let's first try a few things in this "Terminal".
   git init
   ```
 
-  This will **init** ialize the `hello` directory that we are in to be tracked.
+  This will **init**ialize the `hello` directory that we are in to be tracked.
 
   In fact, your terminal should tell you something like:
 
@@ -85,7 +85,7 @@ Let's first try a few things in this "Terminal".
   ls -a
   ```
 
-  you should see something that says `.git`.  This is the secret folder that `git` will use to keep our work safe in this directory! We had to give our `list` command a special `-a` flag, for **a** ll, to reveal it.
+  you should see something that says `.git`.  This is the secret folder that `git` will use to keep our work safe in this directory! We had to give our `list` command a special `-a` flag, for **a**ll, to reveal it.
 
   ![A secret door!](https://31.media.tumblr.com/d2cac9af6eec29f71f477d07d81cbaa6/tumblr_inline_n8pnawVld71ruskat.gif)
 
@@ -117,7 +117,7 @@ Let's first try a few things in this "Terminal".
   git status
   ```
 
-1. Notice how our file when from red to green?  Git is letting us know that it's ready to track changes in `hello.txt`.  We can tell git to save, or **commit** our changes to it's memory, with a **m** essage describing what we did.
+1. Notice how our file when from red to green?  Git is letting us know that it's ready to track changes in `hello.txt`.  We can tell git to save, or **commit** our changes to it's memory, with a**m**essage describing what we did.
 
   ```bash
   git commit -m "Starting our hello"
@@ -142,7 +142,7 @@ Let's first try a few things in this "Terminal".
   git status
   ```
 
-1. Git sees that we modified the file.  In fact, git can tell us exactly what is **diff** erent.  Try
+1. Git sees that we modified the file.  In fact, git can tell us exactly what is **diff**erent.  Try
 
   ```bash
   git diff
@@ -157,7 +157,7 @@ Let's first try a few things in this "Terminal".
 
   When we `git add`, we are adding our files we want to something call a `stage`.  This stage is really powerful.  When we have many more files, and want only changes to certain files to be committed, we can choose to only stage those.  This way, git gives you a chance to add changes to files slowly, and then collect one big list of changes and give it an explanation in the commit message.
 
-1. We ask git to tell us the history of our directory by giving us a **log** of what has happened so far.
+1. We ask git to tell us the history of our directory by giving us a**log**of what has happened so far.
 
   ```bash
   git log
@@ -165,7 +165,7 @@ Let's first try a few things in this "Terminal".
 
   Here, we see some really neat information about our changes.  Git lists our most recent changes at the top with the message we used to describe this change, the time we committed the change, and a [crazy looking long string](http://alblue.bandlem.com/2011/08/git-tip-of-week-objects.html) that refers to each specific change we told it to track.  These descriptions of changes come in very handy as code projects grow and when we need to understand what we did a long time ago or what changes someone else made.
 
-1. This is where we can do some crazy things that would be hard and messy to do without it. We can go back to a specific point in the history of our file by telling git to **checkout** that specific commit.  We can go back to the "Starting our hello" commit by copying the crazy string and putting it into this next command:
+1. This is where we can do some crazy things that would be hard and messy to do without it. We can go back to a specific point in the history of our file by telling git to **checkout**that specific commit.  We can go back to the "Starting our hello" commit by copying the crazy string and putting it into this next command:
 
   ```bash
   git checkout 76036e81bacd14180e6b7709a8738772e798de2c
@@ -186,16 +186,16 @@ Let's first try a few things in this "Terminal".
 
 ***We've just made our first git repository, tracked it's changes, and even saw how to look at a file's history and change timelines!***
 
-| Command | What it means | What it does |
-| -- | -- | -- |
-| `cd hello` | **c** hange&nbsp;&nbsp; **d** irectory | Move into the hello directory |
-| `git init` | **git init** ialize | Start git tracking |
-| `ls -a` | **l** i **s** t  **a** ll | List all things that are in this directory |
-| `explorer .` | Open **explorer** | Open file **explorer** &nbsp;&nbsp;for this current directory |
-| `git status` | hey **git** ,&nbsp;&nbsp; what's your **status**?  | tells us which files have changed since our last commit |
-| `git add hello.txt` | hey **git** ,&nbsp;&nbsp; **add hello.txt** to your "stage" | tells git to keep an eye on the `hello.txt` file |
-| `git commit -m "a message"` | hey **git** ,&nbsp;&nbsp; **commit** &nbsp;&nbsp; these changes as described by this **m** essage | tells git to track the changes of the staged files and describes the change maded |
-| `git diff` | hey **git** ,&nbsp;&nbsp; tell us what's **diff** erent | shows us what has changed since our last commit |
-| `git checkout ____` | hey **git** ,&nbsp;&nbsp; **checkout** &nbsp;&nbsp; what's in _____ | switches us to a parallel universe where our files have a history up to the specified commit |
+| Command     | What it means | What it does |
+| ----------- | ------------- | ------------ |
+| `cd hello`  | **c**hange **d**irectory | Move into the hello directory |
+| `git init`  | **git init**ialize | Start git tracking |
+| `ls -a`     | **l**i **s**t  **a**ll | List all things that are in this directory |
+| `explorer .`  | Open **explorer**| Open file **explorer** for this current directory |
+| `git status`  | hey **git**, what's your **status**?  | tells us which files have changed since our last commit |
+| `git add hello.txt` | hey **git**, **add hello.txt**to your "stage" | tells git to keep an eye on the `hello.txt` file |
+| `git commit -m "a message"` | hey **git**, **commit** these changes as described by this **m**essage | tells git to track the changes of the staged files and describes the change maded |
+| `git diff` | hey **git**, tell us what's **diff**erent | shows us what has changed since our last commit |
+| `git checkout ____` | hey **git**, **checkout** what's in _____ | switches us to a parallel universe where our files have a history up to the specified commit |
 
 ![Turning back time](http://blogjob.com/underthesun/files/2014/08/fanpop-time-turner.gif)
