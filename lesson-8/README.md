@@ -1,7 +1,6 @@
 Table of Contents
 =================
 
-<!-- TOC depth:6 withLinks:1 updateOnSave:1 -->
 - [First commands](#first-commands)
 - [Making a repository](#making-a-repository)
 - [Making changes](#making-changes)
@@ -9,7 +8,6 @@ Table of Contents
 - [What we've learned so far](#what-weve-learned-so-far)
 	- [Terminal Commands](#terminal-commands)
 	- [Git Commands](#git-commands)
-<!-- /TOC -->
 
 Let's first try a few things in this "Terminal".
 
