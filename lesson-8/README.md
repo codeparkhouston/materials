@@ -20,9 +20,10 @@ Table of Contents
 	- [Terminal Commands](#terminal-commands)
 	- [Git Commands](#git-commands)
 
-Let's first try a few things in this "Terminal".
 
 # First commands
+
+Let's first try a few things in this "Terminal".
 
 1. We ask the computer where we are by typing
 
