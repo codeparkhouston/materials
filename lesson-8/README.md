@@ -1,3 +1,16 @@
+Table of Contents
+=================
+
+<!-- TOC depth:6 withLinks:1 updateOnSave:1 -->
+- [First commands](#first-commands)
+- [Making a repository](#making-a-repository)
+- [Making changes](#making-changes)
+- [Changing the repository timeline](#changing-the-repository-timeline)
+- [What we've learned so far](#what-weve-learned-so-far)
+	- [Terminal Commands](#terminal-commands)
+	- [Git Commands](#git-commands)
+<!-- /TOC -->
+
 Let's first try a few things in this "Terminal".
 
 # First commands
@@ -143,9 +156,9 @@ Let's first try a few things in this "Terminal".
 | Command     | What it means | What it does |
 | ----------- | ------------- | ------------ |
 | `explorer .`  | Open **explorer**| Open file **explorer** for this current directory |
-| `git status`  | hey **git**, what's your **status**?  | tells us which files have changed since our last commit |
-| `git add hello.txt` | hey **git**, **add hello.txt** to your "stage" | tells git to keep an eye on the `hello.txt` file |
-| `git commit -m "a message"` | hey **git**, **commit** these changes as described by this **m**essage | tells git to track the changes of the staged files and describes the change made |
+| `git status`  | **git**, what's your **status**?  | tells us which files have changed since our last commit |
+| `git add hello.txt` | **git**, **add hello.txt** to your "stage" | tells git to keep an eye on the `hello.txt` file |
+| `git commit -m "a message"` | **git**, **commit** these changes as described by this **m**essage | tells git to track the changes of the staged files and describes the change made |
 
 # Changing the repository timeline
 
@@ -205,9 +218,9 @@ Let's first try a few things in this "Terminal".
 
 | Command     | What it means | What it does |
 | ----------- | ------------- | ------------ |
-| `git diff` | hey **git**, tell us what's **diff**erent | shows us what has changed since our last commit |
-| `git log` | hey **git**, give us a **log** | shows us a history of our commits |
-| `git checkout ____` | hey **git**, **checkout** what's in _____ | switches us to a parallel universe where our files have a history up to the specified commit |
+| `git diff` | **git**, tell us what's **diff**erent | shows us what has changed since our last commit |
+| `git log` | **git**, give us a **log** | shows us a history of our commits |
+| `git checkout ____` | **git**, **checkout** what's in _____ | switches us to a parallel universe where our files have a history up to the specified commit |
 
 ![Turning back time](http://blogjob.com/underthesun/files/2014/08/fanpop-time-turner.gif)
 
@@ -229,9 +242,9 @@ Let's first try a few things in this "Terminal".
 | Command     | What it means | What it does |
 | ----------- | ------------- | ------------ |
 | `git init`  | **git init**ialize | Start git tracking |
-| `git status`  | hey **git**, what's your **status**?  | tells us which files have changed since our last commit |
-| `git add hello.txt` | hey **git**, **add hello.txt** to your "stage" | tells git to keep an eye on the `hello.txt` file |
-| `git commit -m "a message"` | hey **git**, **commit** these changes as described by this **m**essage | tells git to track the changes of the staged files and describes the change made |
-| `git diff` | hey **git**, tell us what's **diff**erent | shows us what has changed since our last commit |
-| `git log` | hey **git**, give us a **log** | shows us a history of our commits |
-| `git checkout ____` | hey **git**, **checkout** what's in _____ | switches us to a parallel universe where our files have a history up to the specified commit |
+| `git status`  | **git**, what's your **status**?  | tells us which files have changed since our last commit |
+| `git add hello.txt` | **git**, **add hello.txt** to your "stage" | tells git to keep an eye on the `hello.txt` file |
+| `git commit -m "a message"` | **git**, **commit** these changes as described by this **m**essage | tells git to track the changes of the staged files and describes the change made |
+| `git diff` | **git**, tell us what's **diff**erent | shows us what has changed since our last commit |
+| `git log` | **git**, give us a **log** | shows us a history of our commits |
+| `git checkout ____` | **git**, **checkout** what's in _____ | switches us to a parallel universe where our files have a history up to the specified commit |
