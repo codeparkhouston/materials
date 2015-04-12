@@ -102,7 +102,7 @@ Let's first try a few things in this "Terminal".
 
   *Initialized empty Git repository in /Users/pandafulmanda/hello/.git/*
 
-  If you list what is in your directory, it won't look any different. But if you try
+  If you list what is in your directory, it won't look any different. Let's try this instead:
 
   ```bash
   ls -a
