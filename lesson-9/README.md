@@ -22,7 +22,7 @@ Github hosts our repositories -- it makes it so that we can reach our code onlin
 
 # Connect the `hello` repository on our computer to it's new online home.
 
-
+1. Once you 
 
 
 
