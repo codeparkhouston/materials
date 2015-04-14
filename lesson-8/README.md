@@ -276,5 +276,4 @@ _We've just made our first git repository, tracked it's changes, and even saw ho
 | `git log` | **git**, give us a **log** | shows us a history of our commits |
 | `git checkout ____` | **git**, **checkout** what's in _____ | switches us to a parallel universe where our files have a history up to the specified commit |
 
-Next class, we will share this online!
-<!-- Let's [share this online](../lesson-9/README.md)! -->
+Let's [share this online](../lesson-9/README.md)!
