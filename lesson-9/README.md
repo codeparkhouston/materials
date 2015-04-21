@@ -158,6 +158,15 @@ How do we make our hosted site update as well?  We need to combine changes from 
 
 1. Our site is updated!
 
+# Getting our code
+
+What if we want to work on our code on another computer?
+
+1. Go to the url for our code
+
+1. Click on the clipboard on the right of the page.
+
+1. Go to our terminal.  Type `git clone ` and paste in the url we copied.
 
 # Review
 
@@ -204,6 +213,13 @@ How do we make our hosted site update as well?  We need to combine changes from 
 | ----------- | ------------- | ------------ |
 | `git remote add origin ______.git` | **git**, **add** this ____.git address as a **remote origin** | saves a reference to an online home named `origin` |
 | `git push -u origin master` | **git**, **push** what you have tracked up as the master for `origin` | updates our `origin` online with the later tracked code on `mater` |
+
+
+### Getting our code
+
+| Command     | What it means | What it does |
+| ----------- | ------------- | ------------ |
+| `git clone ____`  | **git clone** the git at _____ | Get a copy of the code! |
 
 
 ### Asking `git` for information
