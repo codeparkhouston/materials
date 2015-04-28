@@ -24,4 +24,4 @@ It looks a little crazy and weird because we can't click on anything and we have
 1. "Uncompress" the downloaded zip.
 1. Open the folder, and run ```Cmder.exe```.
 
-## [Make your first repository](../README.md)
+## [Make your first repository](../README.md#first-commands)
