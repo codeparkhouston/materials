@@ -2,13 +2,9 @@
 
 * Basic Info
   * Summary/Goal
-
 * Skills
-
 * Experience
-
 * Education
-
 * Interests
 
 
