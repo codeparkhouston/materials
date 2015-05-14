@@ -18,7 +18,7 @@ A cover letter should include
 * Interests
 
 
-## Cover Letter Example
+# Cover Letter Example
 
 Dear _____,
 
@@ -28,7 +28,7 @@ Thank you for your consideration,
 
 -- Bob Student
 
-## Resume Example
+# Resume Example
 
 ### Bob Student
 
