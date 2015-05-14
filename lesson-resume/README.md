@@ -12,7 +12,7 @@
 
 ## Bob Student
 
-_Junior Developer_ | http://bobstudent.github.io | (123)456-7890
+_Junior Developer_ | http://bobstudent.github.io | bobstudent@bobstudentemail.com | (123)456-7890
 
 I am looking for an internship to further my web development skills. (Add something specific about the job here.)
 
