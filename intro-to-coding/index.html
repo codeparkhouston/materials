@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson One Slides</title>
+    <link rel="stylesheet" type="text/css" href="../slides/lib/bootstrap/styles/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../slides/lib/revealjs/css/reveal.css">
+    <link rel="stylesheet" type="text/css" href="../slides/lib/revealjs/css/theme/white.css">
+    <link rel="stylesheet" href="../slides/lib/revealjs/lib/css/monokai-sublime.css">
+    <link href='http://fonts.googleapis.com/css?family=Muli:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../slides/assets/styles/custom.css">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Welcome!</h1>
+                <aside class="notes">
+                    Students will be filling out warm-ups on what they want to learn and what they are already good at.
+                    <ul>
+                        <li>Welcome (someone else collects and skims through the the slips), into
+                            <ul>
+                                <li>what each of us do</li>
+                                <li>class overview</li>
+                                <li>expectations -- how far we can get will be a direct result of the amount of effort you are willing to put in</li>
+                                <li>syllabus stuff</li>
+                            </ul>
+                        </li>
+                        <li>Discuss "do-now" slips.</li>
+                        <li>Transition into "web development is a specific way of talking to computers to get them to do what we want (personally, what I think is the coolest way)"</li>
+                    </ul>
+                </aside>
+            </section>
+            <section>
+                <h2>What are some things that code makes?</h2>
+            </section>
+            <section>
+                <h2>Who is smarter, a human or a computer?</h2>
+                <aside class="notes">
+                    <ol>
+                        <li>Guide discussion</li>
+                        <li>Transition into robot game -- let's put ourselves in their shoes!</li>
+                        <li>Demostrate robot game.</li>
+                        <li>Next slide</li>
+                    </ol>
+                </aside>
+            </section>
+            <section class="container">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h2>Human</h2>
+                        <ul>
+                            <li>Instruct the robot to draw the picture</li>
+                            <li>You cannot look at what the robot is drawing</li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6">
+                        <h2>Robot</h2>
+                        <ul>
+                            <li>Listen and draw exactly as the human asks</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row fragment fade-in">
+                    <div class="col-xs-12 reveal-time text-center" data-countdown="180000">
+                        <span class="reset-button">
+                            <span class="action"><i></i><span class="action-label"></span></span>
+                            <div class="clear"></div>
+                            <span class="reset"><i class="fa fa-refresh"></i>Reset</span>
+                        </span>
+                        <div class="timer">
+                            <i class="fa fa-clock-o"></i>
+                            <span class="hours-value">00</span><span class="minutes-value">:00</span><span class="seconds-value">:00</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    <p>Ask students to share.</p>
+                </aside>
+            </section>
+            <section>
+                <p>Robots are better at some things,</p>
+                <p>but cannot think on their own.</p>
+                <aside class="notes">
+                    <p>Give example of -- computers would be better at drawing lots of pictures.</p>
+                    <p>Computers don't get impatient or bored or annoyed</p>
+                    <p>We get to do the fun part of telling computers what to do and computers can do the more repetitive stuff.</p>
+                    <p>We will need to keep in mind that computers/robots get confused very easily.</p>
+                    <p>We just need to be explicit and specific with them.</p>
+                </aside>
+            </section>
+            <section>
+                <h2>How does a computer understand images?</h2>
+                <img src="../slides/assets/images/filter-example.jpg">
+            </section>
+            <section class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>ASCII Art</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <img src="../slides/assets/images/puppy-vector.jpg">
+                    </div>
+                    <div class="col-xs-6">
+                        <pre style="font-size: 9px; background: transparent; box-shadow: none;">
+                                                ??          
+                                              vv....        
+                        tt??tt                tt++....      
+                            {{tt            ??tt++++..      
+                      ....++  ttvv::vvvvvvvvvvtt++++..      
+                      ..~~++  ttvvttttttttttttvvtt??        
+                      ..++++ttvvttttttttttvvvvvvtttt**..    
+                      ..++{{vvvvvvvvvvvvvvvv##vvtttttttt    
+                        {{tttt################tttttttttt    
+                      ..??tttttttt##########tttt{{tttttttt  
+                        tttttttttttttttttttt++..  ++tttttt  
+                        tttttttt......tt{{{{~~    {{tttttt  
+                        tttttttt      ..{{{{tt  ..::::tt..  
+                      vvtttttttt        {{{{{{  vv##tt      
+                  vv  tttttttt..**{{vv**tttttt  ##??tt..    
+              {{vvtt  vv..  ..  ++####tt....    **::        
+            tttttttt  vv??    ..~~????::..                  
+          ??vvtttttt..vvvv      ..****                      
+tt..      vvttttvvvv??vv##vv            ..                  
+vvvvvvvvttttttvvvvvvvvtt####vv          ....                
+  ttvvvvvvvvvvvvvvvv##  ######tt          ....{{vv..        
+  ::ttttvvvvvv########{{??####tttt        ..tt++{{vv..      
+      ttvv############vv  ##tttttttt..    ..####vvtt..      
+        ######vvtttt####::  ttttttttvv..  ....tt##          
+        ttttttvvvv######tttt++..tttttttt......****          
+        ttttttttttttttttvvvv##vv??  **??++{{  ~~            
+        ttttttttttttttttvvvvvv##vvtt{{????++????            
+        tttttttttttttttt::vvvv####      ..????~~..          
+                ttttttttttvvvv####        ++..????        **
+          ..        ~~  ??::vv##tt    ..**~~??????..      ..
+            ..      ....**..??vvvv    ??????????~~??**..??  
+              ??......??**....          ??????              
+                ..????????......        ..??                
+                        ????..~~**        ..                
+                            ??????..      ....              
+                                ????        ..              
+                                  ??....  **??              
+                                    {{????::                
+
+                        </pre>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>Let's make our own!</h2>
+
+            </section>
+            <section>
+                <h3>Learn more</h3>
+                <ul>
+                    <li>
+                        <a href="https://www.madewithcode.com" target="_blank">Made with Code</a>
+                    </li>
+                    <li>
+                        <a href="https://dash.generalassemb.ly/" target="_blank">Make a website</a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../slides/lib/jquery/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="../slides/lib/revealjs/lib/js/head.min.js"></script>
+    <script type="text/javascript" src="../slides/lib/lodash/lodash.min.js"></script>
+    <script type="text/javascript" src="../slides/lib/underscore.string/underscore.string.min.js"></script>
+    <script type="text/javascript" src="../slides/lib/revealjs/js/reveal.js"></script>
+    <script type="text/javascript" src="../slides/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../slides/assets/js/index.js"></script>
+</body>
+</html>
